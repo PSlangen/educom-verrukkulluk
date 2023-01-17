@@ -1,0 +1,14 @@
+title 5. Favoriet
+
+actor User
+participant Frontend
+participant Backend
+database Database
+
+==Transaction: Zoeken ==
+
+User->Frontend: Typt keyword
+Frontend->Backend: Stuurt keyword
+Backend->Backend: Zoekt op matches met keyword
+Frontend<--Backend: Stuurt lijst met zoekresultaten naar homepage
+User<--Frontend: Ziet zoekresultaten

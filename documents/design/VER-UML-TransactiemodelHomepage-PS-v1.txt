@@ -1,0 +1,36 @@
+title 2. Detailpagina
+
+actor User
+participant Frontend
+participant Backend
+database Database
+
+==Transaction: Detailpagina==
+
+User->Backend: Klikt op gerecht link
+Backend->Database: Haalt gerecht op obv gerecht_id
+Backend<--Database:Stuurt resultaat
+Backend->Database: Haalt ingredienten op obv gerecht_id
+Backend<--Database:Stuurt resultaat
+Backend->Database: Haalt Bereidingswijze op obv gerecht_id
+Backend<--Database:Stuurt resultaat
+Backend->Database: Haalt Opmerkingen op obv gerecht_id en user_id
+Backend<--Database:Stuurt resultaat
+Backend->Database: Haalt rating op obv gerecht_id
+Backend<--Database:Stuurt resultaat
+Backend->Database: Haalt totaal prijs op obv gerecht_id
+Backend<--Database:Stuurt resultaat
+Backend->Database:Haalt totaal kcal op obv gerecht_id
+Backend<--Database:Stuurt resultaat
+Backend->Database:Haalt rating op obv gerecht_id
+Backend<--Database:Stuurt resultaat
+Backend->Database: Haalt Keuken en Type op obv gerecht_id
+Backend<--Database:Stuurt resultaat
+Backend->Database: Haalt agenda op obv agenda_id
+Backend<--Database:Stuurt resultaat
+
+
+
+
+User<--Backend:Opent gerecht
+

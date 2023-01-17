@@ -1,0 +1,21 @@
+title 3. Op Lijst zetten
+
+actor User
+participant Frontend
+participant Backend
+database Database
+
+==Transaction: Op lijst zetten==
+
+User->Backend:Klikt op "Op lijst" button
+Backend->Database: Bijwerken data obv gerecht_id en user_id
+Backend<--Database:Informatie weggeschreven
+
+Backend->Database: Haalt Ingredienten op obv gerecht_id, ingredient_id
+Backend<--Database:Stuurt resultaat
+Backend->Backend: Berekent totaal ingredienten
+
+
+
+User<--Backend:Opent gerecht
+

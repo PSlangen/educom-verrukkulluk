@@ -1,0 +1,19 @@
+title 5. Favoriet
+
+actor User
+participant Frontend
+participant Backend
+database Database
+
+==Transaction: Favoriet ==
+
+User->Frontend: Klikt op hartje
+Frontend->Backend: Stuurt favoriet (gerecht_id + user_id)
+Backend->Database:Bijwerken data obv gerecht_id + user_id
+Database-->Backend: Informatie weggeschreven
+Backend->Database: Haalt favoriet op obv gerecht_id + user_id
+Database-->Backend: Stuurt resultaat
+
+
+Frontend<--Backend: Stuurt favoriet 
+User<--Frontend: Kleurt hartje rood
