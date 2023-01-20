@@ -11,7 +11,7 @@ $db = new database();
 $art = new artikel($db->getConnection());
 $usr = new user($db->getConnection());
 $kt = new keukentype($db->getConnection());
-$ing = new ingredient($db->getConnection());
+$ing = new ingredient($db->getConnection(), $art);
 
 
 /// VERWERK 
@@ -21,11 +21,11 @@ $keukentypeData = $kt->selectKeukentype(1);
 $ingredientData = $ing->selectIngredient(1);
 
 /// RETURN
-var_dump($artikelData);
-echo "<br>";
-var_dump($userData);
-echo "<br>";
-var_dump($keukentypeData);
-echo "<br>";
+// var_dump($artikelData);
+// echo "<br>";
+// var_dump($userData);
+// echo "<br>";
+// var_dump($keukentypeData);
+// echo "<br>";
 var_dump($ingredientData);
 echo "<br>";
