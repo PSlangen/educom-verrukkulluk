@@ -14,10 +14,18 @@ class ingredient {
         $return = []; //lege array
         $result = mysqli_query($this->connection, $sql); 
         
-        
         while ($ingredient = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            $ingredient += $this-> ophalenArtikel ($ingredient["artikel_id"]); //toevoegen aan array
-            $return [] = $ingredient; //lege array waar we ingredient aan toevoegen obv artikel_id
+            $artikel_id = $ingredient["artikel_id"];
+            $artikel = $this -> ophalenArtikel($artikel_id);
+            $return [] = [              //lege array waar we ingredienten aan toevoegen obv artikel_id
+                "id" => $ingredient ["id"],
+                "aantal" => $ingredient ["aantal"],
+                "naam" => $artikel ["naam"],
+                "omschrijving" => $artikel ["omschrijving"],
+                "prijs" => $artikel ["prijs"],
+                "eenheid" => $artikel ["eenheid"],
+                "verpakking" => $artikel ["verpakking"]
+            ]; 
             
         }
 
@@ -29,6 +37,5 @@ class ingredient {
         return ($this->artikel->selectArtikel($artikel_id)); //ophalen artikel 
     
     }
-
 
 }

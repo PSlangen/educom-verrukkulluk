@@ -20,12 +20,14 @@ $userData = $usr->selectUser(1);
 $keukentypeData = $kt->selectKeukentype(1);
 $ingredientData = $ing->selectIngredient(1);
 
-/// RETURN
-// var_dump($artikelData);
+// /// RETURN
+// echo "<pre>";
+// // var_dump($artikelData);
+// // echo "<br>";
+// // var_dump($userData);
+// // echo "<br>";
+// // var_dump($keukentypeData);
 // echo "<br>";
-// var_dump($userData);
-// echo "<br>";
-// var_dump($keukentypeData);
-// echo "<br>";
+echo "<pre>";
 var_dump($ingredientData);
 echo "<br>";
