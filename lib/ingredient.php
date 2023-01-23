@@ -4,27 +4,27 @@ class ingredient {
 
     private $connection;
 
-    public function __construct($connection, $artikel) {
+    public function __construct($connection, $article) {
         $this->connection = $connection;
-        $this->artikel = $artikel; //functies van artikel class aanhalen 
+        $this->article = $article; //functies van article class aanhalen 
     }
   
-    public function selectIngredient($gerecht_id) {
-        $sql = "select * from ingredient where gerecht_id = $gerecht_id";
+    public function selectIngredient($recipe_id) {
+        $sql = "select * from ingredient where recipe_id = $recipe_id";
         $return = []; //lege array
         $result = mysqli_query($this->connection, $sql); 
         
         while ($ingredient = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            $artikel_id = $ingredient["artikel_id"];
-            $artikel = $this -> ophalenArtikel($artikel_id);
-            $return [] = [              //lege array waar we ingredienten aan toevoegen obv artikel_id
+            $article_id = $ingredient["article_id"];
+            $article = $this -> fetchArticle($article_id);
+            $return [] = [              //lege array waar we ingredienten aan toevoegen obv article_id
                 "id" => $ingredient ["id"],
-                "aantal" => $ingredient ["aantal"],
-                "naam" => $artikel ["naam"],
-                "omschrijving" => $artikel ["omschrijving"],
-                "prijs" => $artikel ["prijs"],
-                "eenheid" => $artikel ["eenheid"],
-                "verpakking" => $artikel ["verpakking"]
+                "number" => $ingredient ["number"],
+                "name" => $article ["name"],
+                "description" => $article ["description"],
+                "price" => $article ["price"],
+                "units" => $article ["units"],
+                "package" => $article ["package"]
             ]; 
             
         }
@@ -33,8 +33,8 @@ class ingredient {
     
     }
 
-    private function ophalenArtikel($artikel_id){
-        return ($this->artikel->selectArtikel($artikel_id)); //ophalen artikel 
+    private function fetchArticle($article_id){
+        return ($this->article->selectArticle($article_id)); //ophalen artikel 
     
     }
 
