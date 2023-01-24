@@ -13,9 +13,9 @@ class kitchentype {
         $sql = "select * from kitchentype where id = $kitchentype_id";
         
         $result = mysqli_query($this->connection, $sql);
-        $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $kitchentype = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-        return($user);
+        return($kitchentype);
 
     }
 
