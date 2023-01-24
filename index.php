@@ -22,7 +22,9 @@ $info = new recipeinfo($db->getConnection(), $usr);
 // $userData = $usr->selectUser(1);
 // $kitchentypeData = $kt->selectKitchentype(1);
 // $ingredientData = $ing->selectIngredient(2);
-$recipeinfoData = $info->selectInfo(2, 'O');
+$recipeinfoData = $info->selectInfo(2, 'F');
+$recipeinfoData = $info->addFavorite(2, 1,);
+
 
 // /// RETURN
 // echo "<pre>";
@@ -35,3 +37,6 @@ $recipeinfoData = $info->selectInfo(2, 'O');
 // echo "<pre>";
 // var_dump($ingredientData);
 // echo "<br>";
+echo "<pre>";
+var_dump($recipeinfoData);
+echo "<br>";
