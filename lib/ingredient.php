@@ -17,8 +17,14 @@ class ingredient {
         while ($ingredient = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $article_id = $ingredient["article_id"];
             $article = $this -> fetchArticle($article_id);
-            $return [] = array_merge($ingredient, $article);
-            
+            $return [] = [
+                "name" => $article["name"],
+                "price" => $article["price"],
+                "units" => $article["units"],
+                "package" => $article["package"],
+                "number" => $ingredient["number"],
+                "calories" => $article["calories"]
+            ];
         }
 
         return($return);
