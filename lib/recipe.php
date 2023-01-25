@@ -28,6 +28,8 @@ class recipe {
             $calories = $this -> calcCalories($ingredients);
             $price = $this -> calcPrice($ingredients);
             $rating = $this -> fetchRating($recipe["id"]);
+            $preparation = $this -> fetchPreparation($recipe["id"]);
+            $comments = $this -> fetchComments($recipe["id"]);
             
             $return [] = [
                 "id" => $recipe["id"],
@@ -38,7 +40,9 @@ class recipe {
                 "ingredients" => $ingredients,
                 "calories" => $calories,
                 "price" => $price,
-                "rating" => $rating
+                "rating" => $rating,
+                "preparation" => $preparation,
+                "comments" => $comments
             ];
         }
 
@@ -59,6 +63,14 @@ class recipe {
 
     private function fetchRating($recipe_id){
         return ($this->recipeinfo->selectInfo($recipe_id, 'R'));
+    }
+
+    private function fetchPreparation($recipe_id){
+        return ($this->recipeinfo->selectInfo($recipe_id, 'P'));
+    }
+
+    private function fetchComments($recipe_id){
+        return ($this->recipeinfo->selectInfo($recipe_id, 'C'));
     }
 
     private function calcCalories($ingredients){
