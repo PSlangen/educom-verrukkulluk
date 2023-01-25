@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 23 jan 2023 om 14:30
+-- Gegenereerd op: 25 jan 2023 om 09:11
 -- Serverversie: 10.4.27-MariaDB
 -- PHP-versie: 8.2.0
 
@@ -42,9 +42,22 @@ CREATE TABLE `article` (
 
 INSERT INTO `article` (`id`, `name`, `description`, `price`, `units`, `package`) VALUES
 (1, 'Spaghetti', 'Lorem Ipsum', '145', 'g', '500'),
-(2, 'Eieren', 'Lorem Ipsum', '250', 'stuks', '6'),
+(2, 'Eieren', 'Lorem Ipsum', '250', 'stuks', '12'),
 (3, 'Pancetta', 'Lorem Ipsum', '395', 'g', '200'),
-(4, 'Parmezaanse Kaas', 'Lorem Ipsum', '395', 'g', '200');
+(4, 'Parmezaanse Kaas', 'Lorem Ipsum', '395', 'g', '200'),
+(5, 'Pandan Rijst', 'Lorem Ipsum', '150', 'g', '400'),
+(6, 'Nasi Groenten', 'Lorem Ipsum', '180', 'g', '500'),
+(7, 'Spekreepjes', 'Lorem Ipsum', '395', 'g', '250'),
+(8, 'Knoflook', 'Lorem Ipsum', '120', 'tenen', '20'),
+(9, 'Ketjap Manis', 'Lorem Ipsum', '295', 'ml', '250'),
+(10, 'Tomato Frito', 'Lorem Ipsum', '145', 'g', '350'),
+(11, 'Tonijn', 'Lorem Ipsum', '245', 'g', '160'),
+(12, 'Ui', 'Lorem Ipsum', '195', 'stuks', '10'),
+(13, 'Geraspte Kaas', 'Lorem Ipsum', '295', 'g', '200'),
+(14, 'Pizza Bodem', 'Lorem Ipsum', '345', 'stuks', '2'),
+(15, 'Tomatenblokjes', 'Lorem Ipsum', '95', 'g', '400'),
+(16, 'Paprika', 'Lorem Ipsum', '175', 'stuks', '3'),
+(17, 'Harissa', 'Lorem Ipsum', '315', 'g', '230');
 
 -- --------------------------------------------------------
 
@@ -67,7 +80,23 @@ INSERT INTO `ingredient` (`id`, `recipe_id`, `article_id`, `number`) VALUES
 (1, 2, 1, 500),
 (2, 2, 2, 2),
 (3, 2, 3, 200),
-(4, 2, 4, 200);
+(4, 2, 4, 200),
+(5, 3, 2, 4),
+(6, 3, 5, 400),
+(7, 3, 6, 500),
+(8, 3, 7, 125),
+(9, 3, 8, 2),
+(10, 3, 9, 25),
+(11, 4, 10, 700),
+(12, 4, 11, 640),
+(14, 4, 12, 2),
+(15, 4, 13, 400),
+(16, 4, 14, 4),
+(17, 5, 15, 800),
+(18, 5, 16, 3),
+(19, 5, 17, 230),
+(20, 5, 12, 2),
+(21, 5, 2, 6);
 
 -- --------------------------------------------------------
 
@@ -92,7 +121,9 @@ INSERT INTO `kitchentype` (`id`, `record_type`, `description`) VALUES
 (4, 'T', 'Vegan'),
 (5, 'K', 'Italiaans'),
 (6, 'K', 'Frans'),
-(7, 'K', 'Indonesisch');
+(7, 'K', 'Indonesisch'),
+(8, 'K', 'Midden-oosters'),
+(9, 'K', 'Thais');
 
 -- --------------------------------------------------------
 
@@ -117,7 +148,10 @@ CREATE TABLE `recipe` (
 --
 
 INSERT INTO `recipe` (`id`, `kitchen_id`, `type_id`, `user_id`, `date_added`, `title`, `short_description`, `long_description`, `image`) VALUES
-(2, 5, 1, 1, '2023-01-18', 'Spaghetti Carbonara', 'Lorem Ipsum', 'Lorem Ipsum', '');
+(2, 5, 1, 1, '2023-01-18', 'Spaghetti Carbonara', 'Lorem Ipsum', 'Lorem Ipsum', ''),
+(3, 7, 1, 1, '2023-01-24', 'Nasi Goreng', 'Lorem Ipsum', 'Lorem Ipsum', NULL),
+(4, 5, 2, 1, '2023-01-24', 'Pizza Tonno', 'Lorem Ipsum', ' Lorem Ipsum', NULL),
+(5, 8, 3, 1, '2023-01-24', 'Shakshuka', 'Lorem Ipsum', ' Lorem Ipsum', NULL);
 
 -- --------------------------------------------------------
 
@@ -140,10 +174,15 @@ CREATE TABLE `recipeinfo` (
 --
 
 INSERT INTO `recipeinfo` (`id`, `record_type`, `recipe_id`, `user_id`, `date`, `numerical`, `text`) VALUES
-(1, 'O', 2, 1, '2023-01-23', '', 'Lekker!'),
-(3, 'B', 2, 1, '2023-01-23', '1', 'Klop 2 eieren in een kom'),
-(7, 'W', 2, NULL, NULL, '4', NULL),
-(10, 'F', 2, 1, NULL, NULL, NULL);
+(1, 'C', 2, 1, '2023-01-23', '', 'Lekker!'),
+(3, 'P', 2, 1, '2023-01-23', '1', 'Klop 2 eieren in een kom'),
+(7, 'R', 2, NULL, NULL, '4', NULL),
+(11, 'C', 2, 1, NULL, NULL, 'Bah'),
+(15, 'F', 2, 1, NULL, NULL, NULL),
+(16, 'F', 2, 1, NULL, NULL, NULL),
+(17, 'F', 2, 1, NULL, NULL, NULL),
+(18, 'F', 2, 1, NULL, NULL, NULL),
+(19, 'F', 2, 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -221,25 +260,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT voor een tabel `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT voor een tabel `ingredient`
 --
 ALTER TABLE `ingredient`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT voor een tabel `kitchentype`
+--
+ALTER TABLE `kitchentype`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT voor een tabel `recipe`
 --
 ALTER TABLE `recipe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `recipeinfo`
 --
 ALTER TABLE `recipeinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`
