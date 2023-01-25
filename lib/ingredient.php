@@ -3,10 +3,11 @@
 class ingredient {
 
     private $connection;
+    private $article;
 
-    public function __construct($connection, $article) {
+    public function __construct($connection) {
         $this->connection = $connection;
-        $this->article = $article; //functies van article class aanhalen 
+        $this->article = new article($connection); //functies van article class aanhalen 
     }
   
     public function selectIngredient($recipe_id) {

@@ -2,12 +2,17 @@
 class recipe {
 
     private $connection;
+    private $user;
+    private $kitchentype;
+    private $ingredient;
+    private $recipeinfo;
 
-    public function __construct($connection, $user, $kitchentype, $ingredient) {
+    public function __construct($connection) {
         $this->connection = $connection;
-        $this->user = $user;  
-        $this->kitchentype = $kitchentype;
-        $this->ingredient = $ingredient;
+        $this->user = new user ($connection);  
+        $this->kitchentype = new kitchentype ($connection);
+        $this->ingredient = new ingredient ($connection);
+        $this->recipeinfo = new recipeinfo ($connection);
     }
   
     public function selectRecipe($recipe_id) {
@@ -19,7 +24,10 @@ class recipe {
             $user = $this -> fetchUser($recipe["user_id"]);
             $kitchen = $this -> fetchKitchenType($recipe["kitchen_id"]);
             $type = $this -> fetchKitchenType($recipe["type_id"]);
-            $ingredient = $this -> fetchIngredients($recipe["id"]);
+            $ingredients = $this -> fetchIngredients($recipe["id"]);
+            $calories = $this -> calcCalories($ingredients);
+            $price = $this -> calcPrice($ingredients);
+            $rating = $this -> fetchRating($recipe["id"]);
             
             $return [] = [
                 "id" => $recipe["id"],
@@ -27,7 +35,10 @@ class recipe {
                 "kitchen" => $kitchen["description"],
                 "type" => $type["description"],
                 "user" => $user["user_name"],
-                "ingredients" => $ingredient
+                "ingredients" => $ingredients,
+                "calories" => $calories,
+                "price" => $price,
+                "rating" => $rating
             ];
         }
 
@@ -46,10 +57,24 @@ class recipe {
         return ($this->ingredient->selectIngredient($ingredient_id)); 
     }
 
-    private function calcCalories($recipe_id){
-
+    private function fetchRating($recipe_id){
+        return ($this->recipeinfo->selectInfo($recipe_id, 'R'));
     }
 
+    private function calcCalories($ingredients){
+        $totalCalories = 0;
+        foreach ($ingredients as $ingredient){
+            $totalCalories += ($ingredient["number"]/$ingredient["package"]) * $ingredient["calories"];
+        }
+        return($totalCalories);
+    }
 
+    private function calcPrice($ingredients){
+        $totalPrice = 0;
+        foreach ($ingredients as $ingredient){
+            $totalPrice += ($ingredient["number"]/$ingredient["package"]) * $ingredient["price"];
+        }
+        return($totalPrice);
+    }
 
 }

@@ -15,7 +15,7 @@ $usr = new user($db->getConnection());
 $kt = new kitchentype($db->getConnection());
 $ing = new ingredient($db->getConnection(), $art);
 $info = new recipeinfo($db->getConnection(), $usr);
-$rec = new recipe ($db->getConnection(), $usr, $kt, $ing);
+$rec = new recipe ($db->getConnection(), $usr, $kt, $ing, $info);
 
 
 
@@ -26,7 +26,7 @@ $kitchentypeData = $kt->selectKitchentype(1);
 $ingredientData = $ing->selectIngredient(2);
 $recipeinfoData = $info->selectInfo(2, 'F');
 $recipeinfoData = $info->addFavorite(2, 1,);
-$recipeData = $rec->selectRecipe(4);
+$recipeData = $rec->selectRecipe(2);
 
 
 // /// RETURN
