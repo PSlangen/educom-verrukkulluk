@@ -26,7 +26,7 @@ $kitchentypeData = $kt->selectKitchentype(1);
 $ingredientData = $ing->selectIngredient(2);
 $recipeinfoData = $info->selectInfo(2, 'F');
 $recipeinfoData = $info->addFavorite(2, 1,);
-$recipeData = $rec->selectRecipe(2);
+$recipeData = $rec->selectRecipe(0);
 
 
 // /// RETURN

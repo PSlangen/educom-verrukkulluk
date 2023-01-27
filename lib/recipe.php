@@ -16,11 +16,15 @@ class recipe {
     }
   
     public function selectRecipe($recipe_id) {
-        $sql = "select * from recipe where id = $recipe_id";
-        $result = mysqli_query($this->connection, $sql);
-        
+        $sql = "select * from recipe";
 
-        while($recipe = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+        if ($recipe_id > 0){
+            $sql = "select * from recipe where id = $recipe_id";
+        }
+
+        $result = mysqli_query($this->connection, $sql);
+
+        while ($recipe = mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $user = $this -> fetchUser($recipe["user_id"]);
             $kitchen = $this -> fetchKitchenType($recipe["kitchen_id"]);
             $type = $this -> fetchKitchenType($recipe["type_id"]);
@@ -30,6 +34,7 @@ class recipe {
             $rating = $this -> fetchRating($recipe["id"]);
             $preparation = $this -> fetchPreparation($recipe["id"]);
             $comments = $this -> fetchComments($recipe["id"]);
+            $favorites = $this -> determineFavorite($recipe["id"]);
             
             $return [] = [
                 "id" => $recipe["id"],
@@ -42,7 +47,8 @@ class recipe {
                 "price" => $price,
                 "rating" => $rating,
                 "preparation" => $preparation,
-                "comments" => $comments
+                "comments" => $comments,
+                "favorites" => $favorites
             ];
         }
 
@@ -71,6 +77,10 @@ class recipe {
 
     private function fetchComments($recipe_id){
         return ($this->recipeinfo->selectInfo($recipe_id, 'C'));
+    }
+
+    private function determineFavorite($recipe_id){
+        return ($this->recipeinfo->selectInfo($recipe_id, 'F'));
     }
 
     private function calcCalories($ingredients){
