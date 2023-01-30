@@ -15,10 +15,10 @@ class recipe {
         $this->recipeinfo = new recipeinfo ($connection);
     }
   
-    public function selectRecipe($recipe_id) {
+    public function selectRecipe($recipe_id = null) {
         $sql = "select * from recipe";
 
-        if ($recipe_id > 0){
+        if ($recipe_id != null){
             $sql = "select * from recipe where id = $recipe_id";
         }
 

@@ -19,6 +19,8 @@ class ingredient {
             $article_id = $ingredient["article_id"];
             $article = $this -> fetchArticle($article_id);
             $return [] = [
+                "recipe_id"=>$ingredient["recipe_id"],
+                "article_id"=>$ingredient["article_id"],
                 "name" => $article["name"],
                 "price" => $article["price"],
                 "units" => $article["units"],

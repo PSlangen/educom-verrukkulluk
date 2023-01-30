@@ -17,7 +17,7 @@ $kt = new kitchentype($db->getConnection());
 $ing = new ingredient($db->getConnection(), $art);
 $info = new recipeinfo($db->getConnection(), $usr);
 $rec = new recipe ($db->getConnection(), $usr, $kt, $ing, $info);
-$gro = new groceries ($db->getConnection(), $usr, $art);
+$gro = new groceries ($db->getConnection(), $usr, $ing, $art);
 
 
 
@@ -29,7 +29,7 @@ $ingredientData = $ing->selectIngredient(2);
 $recipeinfoData = $info->selectInfo(2, 'F');
 $recipeinfoData = $info->addFavorite(2, 1,);
 $recipeData = $rec->selectRecipe(0);
-$groceriesData = $gro->selectGroceries();
+$groceriesData = $gro->ArticleOnList(2, 1);
 
 
 // /// RETURN
