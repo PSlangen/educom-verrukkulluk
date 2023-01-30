@@ -19,16 +19,9 @@ class groceries {
     //     return ($ingredients);
     // }
 
-
-
-
-
     // private function fetchIngredients($recipe_id){
     //     return ($this->ingredient->selectIngredient($recipe_id));
     // }
-
-
-
 
 
     public function ArticleOnList ($article_id, $user_id){
@@ -36,7 +29,10 @@ class groceries {
 
         foreach($groceries as $grocerie){
             if ($grocerie["article_id"] == $article_id){
-                echo "test";
+               return ($grocerie);
+            }
+            else{
+                echo "yes";
             }
         }
     }
