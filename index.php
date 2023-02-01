@@ -29,7 +29,7 @@ $ingredientData = $ing->selectIngredient(2);
 $recipeinfoData = $info->selectInfo(2, 'F');
 $recipeinfoData = $info->addFavorite(2, 1,);
 $recipeData = $rec->selectRecipe(0);
-$groceriesData = $gro->AddGroceries(2,1);
+$groceriesData = $gro->AddGroceries(4,1);
 
 
 // /// RETURN

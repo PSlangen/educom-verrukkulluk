@@ -19,10 +19,10 @@ class groceries {
 
         foreach ($ingredients as $ingredient){
             if (!$this -> ArticleOnList ($ingredient["article_id"], $user_id)){
-                $this -> addArticle ($ingredient["article_id"], $user_id); //ArticleOnList = false
+                $this -> addArticle ($ingredient, $user_id); //ArticleOnList = false
             }
             else{
-                $this -> updateArticle ($ingredient["article_id"], $user_id); //ArticleOnList = true
+                $this -> updateArticle ($ingredient, $user_id); //ArticleOnList = true
             }
         }
     }
@@ -52,27 +52,34 @@ class groceries {
         return ($this->ingredient->selectIngredient($recipe_id));
     }
 
-    private function addArticle ($article_id, $user_id){
-        $calcNumber = 1;
+    private function addArticle ($ingredient, $user_id){
+        $article_id = $ingredient["article_id"];
+        $groceryNumber = (ceil($ingredient["number"]/$ingredient["package"]));
 
         $sql = "INSERT INTO groceries (article_id, user_id, number) 
-        VALUES ($article_id, $user_id, $calcNumber)";
+        VALUES ($article_id, $user_id, $groceryNumber)";
         $result = mysqli_query($this->connection, $sql); 
         return ($result);
     }
 
-    private function updateArticle($article_id, $user_id){
+    private function updateArticle ($ingredient, $user_id){
+        $article_id = $ingredient["article_id"];
+        $groceryNumber = $this->calcNumber($ingredient, $user_id);
 
-        $calcNumber = 120;
-        $sql = "UPDATE groceries SET number=$calcNumber WHERE article_id=$article_id AND user_id=$user_id";
+        $sql = "UPDATE groceries SET number=$groceryNumber WHERE article_id=$article_id AND user_id=$user_id";
         $result = mysqli_query($this->connection, $sql); 
         return ($result);
     }
 
-    private function calcNumber ($ingredients){
-        $ingredientNumber = (ceil($ingredient["number"]/$article["package"]));
-        return($ingredientNumber);
+    private function calcNumber ($ingredient, $user_id){
+        $grocery = $this->ArticleOnList($ingredient["article_id"], $user_id);
+        $groceryNumber = (ceil($ingredient["number"]/$ingredient["package"]));
 
+        if ($grocery){
+            $groceryNumber += $grocery["number"];
+        }
+
+        return($groceryNumber);
+        
     }
-
 }

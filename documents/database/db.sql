@@ -42,22 +42,22 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id`, `name`, `description`, `price`, `units`, `package`, `calories`) VALUES
-(1, 'Spaghetti', 'Lorem Ipsum', '145', 'g', '500', 300),
-(2, 'Eieren', 'Lorem Ipsum', '250', 'stuks', '12', 150),
-(3, 'Pancetta', 'Lorem Ipsum', '395', 'g', '200', 200),
-(4, 'Parmezaanse Kaas', 'Lorem Ipsum', '395', 'g', '200', 600),
-(5, 'Pandan Rijst', 'Lorem Ipsum', '150', 'g', '400', 500),
-(6, 'Nasi Groenten', 'Lorem Ipsum', '180', 'g', '500', 200),
-(7, 'Spekreepjes', 'Lorem Ipsum', '395', 'g', '250', 500),
-(8, 'Knoflook', 'Lorem Ipsum', '120', 'tenen', '20', 50),
-(9, 'Ketjap Manis', 'Lorem Ipsum', '295', 'ml', '250', 100),
-(10, 'Tomato Frito', 'Lorem Ipsum', '145', 'g', '350', 150),
-(11, 'Tonijn', 'Lorem Ipsum', '245', 'g', '160', 200),
-(12, 'Ui', 'Lorem Ipsum', '195', 'stuks', '10', 80),
-(13, 'Geraspte Kaas', 'Lorem Ipsum', '295', 'g', '200', 700),
-(14, 'Pizza Bodem', 'Lorem Ipsum', '345', 'stuks', '2', 350),
-(15, 'Tomatenblokjes', 'Lorem Ipsum', '95', 'g', '400', 250),
-(16, 'Paprika', 'Lorem Ipsum', '175', 'stuks', '3', 70),
+(1, 'Spaghetti', 'Lorem Ipsum', '145', 'g', '500', 750),
+(2, 'Eieren', 'Lorem Ipsum', '250', 'stuks', '12', 1080),
+(3, 'Pancetta', 'Lorem Ipsum', '395', 'g', '200', 940),
+(4, 'Parmezaanse Kaas', 'Lorem Ipsum', '395', 'g', '200', 860),
+(5, 'Pandan Rijst', 'Lorem Ipsum', '150', 'g', '400', 1400),
+(6, 'Nasi Groenten', 'Lorem Ipsum', '180', 'g', '500', 180),
+(7, 'Spekreepjes', 'Lorem Ipsum', '395', 'g', '250', 700),
+(8, 'Knoflook', 'Lorem Ipsum', '120', 'tenen', '20', 130),
+(9, 'Ketjap Manis', 'Lorem Ipsum', '295', 'ml', '250', 600),
+(10, 'Tomato Frito', 'Lorem Ipsum', '145', 'g', '350', 280),
+(11, 'Tonijn', 'Lorem Ipsum', '245', 'g', '160', 130),
+(12, 'Ui', 'Lorem Ipsum', '195', 'stuks', '10', 400),
+(13, 'Geraspte Kaas', 'Lorem Ipsum', '295', 'g', '200', 740),
+(14, 'Pizza Bodem', 'Lorem Ipsum', '345', 'stuks', '2', 680),
+(15, 'Tomatenblokjes', 'Lorem Ipsum', '95', 'g', '400', 90),
+(16, 'Paprika', 'Lorem Ipsum', '175', 'stuks', '3', 100),
 (17, 'Harissa', 'Lorem Ipsum', '315', 'g', '230', 220);
 
 -- --------------------------------------------------------
