@@ -56,14 +56,14 @@ $action = isset($_GET["action"]) ? $_GET["action"] : "homepage";
 switch($action) {
 
         case "homepage": {
-            $data = $recipe->selectRecipe($recipe_id);
+            $data = $recipe->selectRecipe();
             $template = 'homepage.html.twig';
             $title = "homepage";
             break;
         }
 
         case "detail": {
-            $data = $recipe->selectRecipe($recipe_id);
+            $data = $recipe->selectRecipe(2);
             $template = 'detail.html.twig';
             $title = "detail pagina";
             break;

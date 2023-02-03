@@ -1,7 +1,7 @@
 <html lang="nl">
 <head>
 
-    <title>het is verrukkuluk! :: {{ TITEL }} </title>
+    <title>het is verrukkuluk! :: {{ title }} </title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css" />
@@ -19,31 +19,67 @@
 
     <div class="row">
         <div class="col-md-12">
-        {% block header %}
-            
-        {% endblock %}   
+            <div class="p-md-0">
+                </div>
+                    {% block header %}
+                    <div class="main-header background-image" style="background-image: url(assets/img/carbonara_wide.webp)";> 
+                    {% endblock %}
+                </div>
+            </div>
         </div>
     </div>
+
 
     <div class="row">
         <div class="col-md-3">
-            <h2>Agenda</h2>
-            <i class="fa fa-calendar"></i> FontAwesome <a href="https://fontawesome.com/icons?d=gallery&m=free">Documentation</a><br>
-            <i class="fa fa-file-pdf"></i><a href="https://www.layoutit.com/build">Layout-it</a>
-
-
+            <div class="col-md-12">
+                <div class="m-md-3">
+                    <div style= "color: white; background-color: var(--lighter-green);">
+                        <div>
+                        <h1>Agenda</h1> </div>
+                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
+                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
+                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
+                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
+                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-md-12">
+                <div class="m-md-3">
+                    <div style= "color: white; background-color: var(--darker-red);">
+                        <h1>Login</h1>
+                    </div>
+                </div>  
+            </div>      
         </div>
+
+
         <div class="col-md-9">
-            <h2>Content</h2>
+            <div class="m-md-0">
                 {%  block content %}
                 {%  endblock %}
+            </div>
         </div>
     </div>
 
 
     <div class="row">
-        <div class="col-md-12">
-            <h1>Footer</h1>
+        <div class="col-md-12" style= "background-color: var(--darker-orange);">
+            <div class="p-md-0">
+                <div> 
+                    <img class="footer-logo" src="assets/img/verrukkulluk-pay-off.png"> 
+                    <img class="footer-contact" src="assets/img/verrukkulluk-contact.png"> 
+                </div>
+
+                <div class="footer-text"> 
+                <br><br><br>Verrukkulluk.nl <br>
+                Poststraat 2b <br>
+                Sittard <br>
+                Info@verrukkulluk.nl<br><br><br>
+                </div>
+
+            </div>
         </div>
     </div>
 

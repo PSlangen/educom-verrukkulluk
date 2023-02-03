@@ -48,7 +48,10 @@ class recipe {
                 "rating" => $rating,
                 "preparation" => $preparation,
                 "comments" => $comments,
-                "favorites" => $favorites
+                "favorites" => $favorites,
+                "short_description"=>$recipe["short_description"],
+                "long_description"=>$recipe["long_description"],
+                "image"=>$recipe["image"]
             ];
         }
 

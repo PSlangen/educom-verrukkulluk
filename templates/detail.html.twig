@@ -1,5 +1,38 @@
 {% extends "main.html.twig" %}
 
+
 {% block header %}
 <h1>Hallo Bram</h1>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="row">
+    {% for record in data %}
+        <div class="col-md-12" style= "background-color: red; border-radius: 40px;" >
+            <li>
+                <img src="{{ record.image }}" style="width: 100px; height: 100px;">
+
+                <strong>{{ record.title }}</strong>
+                {{record.short_description}}
+                {{record.long_description}}
+
+                <ul>
+                    {% for ingr in record.ingredients %}
+                        <li>
+                            <span {% if ingr.id < 2 %}style='color: #F00'{% endif %}>{{  ingr.name }}</span>
+
+                            {# if #}
+                            {%  if ingr.id == 3 %}
+                                <strong>Dit is ID 3!</strong>
+                            {%  endif  %}
+                        </li>
+                    {% endfor %}
+                </ul>
+                </li>
+        </div>
+    {% endfor %}
+
 {% endblock %}
