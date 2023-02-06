@@ -14,27 +14,38 @@
 
     <div class="row">
     {% for record in data %}
-
-        <div class="col-md-6" >
-            <div class="p-md-3" > 
-                <div class="recipe-box">
-
-                    <div class="background-image"  style= "background-image: url({{record.image}})"> </div>
-                    
-                    <div style= "background-color: lightgreen; margin: 20px;">
-                    <h2>{{ record.title }}</h2> </div>
-                    
-                    <div style= "background-color: lightblue; margin: 20px;">
-                    {{record.short_description}} </div>
-
-                    <div style= "background-color: pink; margin: 20px;">
-                    {{"4"}}
-                    {{record.price}}
-                    {{record.calories}} </div>
-
-                </div>
-            </div>
+        <div class="col-md-6">
+            <div class="row">
+				<div class="col-md-12">
+                    <div class="background-image" style="background-image: url({{record.image}})"> </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+                    <div class="lighter-green"> <h2>{{ record.title }}</h2> </div>
+				</div>
+				<div class="col-md-6">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+                    <div>{{record.short_description}} </div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+                {# Smullen knop hier #}
+				</div>
+				<div class="col-md-6">
+                    <div class="persons-cal-price">
+                    <i class="fa fa-user fa-1x lighter-red"></i> 4 &nbsp &nbsp
+                    <i class="fa fa-euro-sign lighter-red"></i>{{record.price|round()/100}} &nbsp &nbsp
+                    <i class="fa fa-fire fa-1x lighter-red"></i>{{record.calories/4|round}} &nbsp &nbsp  
+                    </div>
+				</div>
+			</div>
         </div>
+    </div>
     {% endfor %}
 
 

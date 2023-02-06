@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 31 jan 2023 om 16:55
+-- Gegenereerd op: 06 feb 2023 om 11:31
 -- Serverversie: 10.4.27-MariaDB
 -- PHP-versie: 8.2.0
 
@@ -42,22 +42,22 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id`, `name`, `description`, `price`, `units`, `package`, `calories`) VALUES
-(1, 'Spaghetti', 'Lorem Ipsum', '145', 'g', '500', 750),
-(2, 'Eieren', 'Lorem Ipsum', '250', 'stuks', '12', 1080),
-(3, 'Pancetta', 'Lorem Ipsum', '395', 'g', '200', 940),
-(4, 'Parmezaanse Kaas', 'Lorem Ipsum', '395', 'g', '200', 860),
-(5, 'Pandan Rijst', 'Lorem Ipsum', '150', 'g', '400', 1400),
-(6, 'Nasi Groenten', 'Lorem Ipsum', '180', 'g', '500', 180),
-(7, 'Spekreepjes', 'Lorem Ipsum', '395', 'g', '250', 700),
-(8, 'Knoflook', 'Lorem Ipsum', '120', 'tenen', '20', 130),
-(9, 'Ketjap Manis', 'Lorem Ipsum', '295', 'ml', '250', 600),
-(10, 'Tomato Frito', 'Lorem Ipsum', '145', 'g', '350', 280),
-(11, 'Tonijn', 'Lorem Ipsum', '245', 'g', '160', 130),
-(12, 'Ui', 'Lorem Ipsum', '195', 'stuks', '10', 400),
-(13, 'Geraspte Kaas', 'Lorem Ipsum', '295', 'g', '200', 740),
-(14, 'Pizza Bodem', 'Lorem Ipsum', '345', 'stuks', '2', 680),
-(15, 'Tomatenblokjes', 'Lorem Ipsum', '95', 'g', '400', 90),
-(16, 'Paprika', 'Lorem Ipsum', '175', 'stuks', '3', 100),
+(1, 'Spaghetti', 'Lorem Ipsum', '145', 'g', '500', 300),
+(2, 'Eieren', 'Lorem Ipsum', '250', 'stuks', '12', 150),
+(3, 'Pancetta', 'Lorem Ipsum', '395', 'g', '200', 200),
+(4, 'Parmezaanse Kaas', 'Lorem Ipsum', '395', 'g', '200', 600),
+(5, 'Pandan Rijst', 'Lorem Ipsum', '150', 'g', '400', 500),
+(6, 'Nasi Groenten', 'Lorem Ipsum', '180', 'g', '500', 200),
+(7, 'Spekreepjes', 'Lorem Ipsum', '395', 'g', '250', 500),
+(8, 'Knoflook', 'Lorem Ipsum', '120', 'tenen', '20', 50),
+(9, 'Ketjap Manis', 'Lorem Ipsum', '295', 'ml', '250', 100),
+(10, 'Tomato Frito', 'Lorem Ipsum', '145', 'g', '350', 150),
+(11, 'Tonijn', 'Lorem Ipsum', '245', 'g', '160', 200),
+(12, 'Ui', 'Lorem Ipsum', '195', 'stuks', '10', 80),
+(13, 'Geraspte Kaas', 'Lorem Ipsum', '295', 'g', '200', 700),
+(14, 'Pizza Bodem', 'Lorem Ipsum', '345', 'stuks', '2', 350),
+(15, 'Tomatenblokjes', 'Lorem Ipsum', '95', 'g', '400', 250),
+(16, 'Paprika', 'Lorem Ipsum', '175', 'stuks', '3', 70),
 (17, 'Harissa', 'Lorem Ipsum', '315', 'g', '230', 220);
 
 -- --------------------------------------------------------
@@ -72,6 +72,17 @@ CREATE TABLE `groceries` (
   `user_id` int(11) NOT NULL,
   `number` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `groceries`
+--
+
+INSERT INTO `groceries` (`id`, `article_id`, `user_id`, `number`) VALUES
+(1, 10, 1, 316),
+(2, 11, 1, 474),
+(3, 12, 1, 158),
+(4, 13, 1, 316),
+(5, 14, 1, 316);
 
 -- --------------------------------------------------------
 
@@ -162,10 +173,10 @@ CREATE TABLE `recipe` (
 --
 
 INSERT INTO `recipe` (`id`, `kitchen_id`, `type_id`, `user_id`, `date_added`, `title`, `short_description`, `long_description`, `image`) VALUES
-(2, 5, 1, 1, '2023-01-18', 'Spaghetti Carbonara', 'Lorem Ipsum', 'Lorem Ipsum', ''),
-(3, 7, 1, 1, '2023-01-24', 'Nasi Goreng', 'Lorem Ipsum', 'Lorem Ipsum', NULL),
-(4, 5, 2, 1, '2023-01-24', 'Pizza Tonno', 'Lorem Ipsum', ' Lorem Ipsum', NULL),
-(5, 8, 3, 1, '2023-01-24', 'Shakshuka', 'Lorem Ipsum', ' Lorem Ipsum', NULL);
+(2, 5, 1, 1, '2023-01-18', 'Spaghetti Carbonara', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'assets\\img\\spaghetti_carbonara.webp'),
+(3, 7, 1, 1, '2023-01-24', 'Nasi Goreng', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'assets\\img\\nasi_goreng.webp'),
+(4, 5, 2, 1, '2023-01-24', 'Pizza Tonno', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'assets\\img\\pizza_tonno.webp'),
+(5, 8, 3, 1, '2023-01-24', 'Shakshuka', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'assets\\img\\shakshuka.webp');
 
 -- --------------------------------------------------------
 
@@ -400,7 +411,10 @@ INSERT INTO `recipeinfo` (`id`, `record_type`, `recipe_id`, `user_id`, `date`, `
 (220, 'F', 2, 1, NULL, NULL, NULL),
 (221, 'F', 2, 1, NULL, NULL, NULL),
 (222, 'F', 2, 1, NULL, NULL, NULL),
-(223, 'F', 2, 1, NULL, NULL, NULL);
+(223, 'F', 2, 1, NULL, NULL, NULL),
+(224, 'F', 2, 1, NULL, NULL, NULL),
+(225, 'F', 2, 1, NULL, NULL, NULL),
+(226, 'F', 2, 1, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -492,7 +506,7 @@ ALTER TABLE `article`
 -- AUTO_INCREMENT voor een tabel `groceries`
 --
 ALTER TABLE `groceries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT voor een tabel `ingredient`
@@ -516,7 +530,7 @@ ALTER TABLE `recipe`
 -- AUTO_INCREMENT voor een tabel `recipeinfo`
 --
 ALTER TABLE `recipeinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=224;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
 -- AUTO_INCREMENT voor een tabel `user`

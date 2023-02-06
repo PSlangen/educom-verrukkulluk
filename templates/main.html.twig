@@ -19,13 +19,13 @@
 
     <div class="row">
         <div class="col-md-12">
-            <div class="p-md-0">
                 </div>
                     {% block header %}
-                    <div class="main-header background-image" style="background-image: url(assets/img/carbonara_wide.webp)";> 
+                    <div class="main-header background-image" style="background-image: url(assets/img/carbonara_wide.webp)";>
+                    <img class="header-logo" src="assets/img/logo-v2.png"> 
+                    </div>
                     {% endblock %}
                 </div>
-            </div>
         </div>
     </div>
 
@@ -33,53 +33,44 @@
     <div class="row">
         <div class="col-md-3">
             <div class="col-md-12">
-                <div class="m-md-3">
-                    <div style= "color: white; background-color: var(--lighter-green);">
-                        <div> <h1>Agenda</h1> </div>
-                        <div>
-                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
-                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
-                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
-                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
-                        <i class="fa fa-calendar"></i> <h3> Vegetarisch koken</h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br>
-                        </div>
-                    </div>
+                <div class= "agenda-box"> 
+
+                    <div <i class="fa fa-calendar fa-3x "></i> </div>
+                    <div> <h3> Vegetarisch koken </h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee </div>
+                    
+                       
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="m-md-3">
-                    <div style= "color: white; background-color: var(--darker-red);">
-                        <h1>Login</h1>
-                    </div>
-                </div>  
+                <div class="login-box">
+                    <h1>Login</h1>
+                    <h1>Login</h1>
+                    <h1>Login</h1>
+
+                </div>
             </div>      
         </div>
 
 
         <div class="col-md-9">
-            <div class="m-md-0">
-                {%  block content %}
-                {%  endblock %}
-            </div>
+            {%  block content %}
+            {%  endblock %}
         </div>
     </div>
 
 
     <div class="row">
-        <div class="col-md-12" style= "background-color: var(--darker-orange);">
-            <div class="p-md-0">
-                <div> 
-                    <img class="footer-logo" src="assets/img/verrukkulluk-pay-off.png"> 
-                    <img class="footer-contact" src="assets/img/verrukkulluk-contact.png"> 
-                </div>
+        <div class="col-md-12 " style= "background-color: var(--darker-orange);">
+            <div> 
+                <img class="footer-logo" src="assets/img/verrukkulluk-pay-off.png"> 
+                <img class="footer-contact" src="assets/img/verrukkulluk-contact.png"> 
+            </div>
 
-                <div class="footer-text"> 
-                <br><br><br>Verrukkulluk.nl <br>
-                Poststraat 2b <br>
-                Sittard <br>
-                Info@verrukkulluk.nl<br><br><br>
-                </div>
-
+            <div class="footer-text"> 
+            <br><br><br>Verrukkulluk.nl <br>
+            Poststraat 2b <br>
+            Sittard <br>
+            Info@verrukkulluk.nl<br><br><br>
             </div>
         </div>
     </div>
