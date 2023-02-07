@@ -53,80 +53,132 @@ html, body {
     font-size: 16px;
 }
 
-
+/* homepage */
 .recipe-box {
-    height: 500px;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
     /* background-color: yellow; */
 }
 
 .background-image {
-    width: 400px; 
-    height: 100px;
+    width: 100%; 
+    height: 250px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-color: red; */
+    background-color: red;
+    overflow: hidden;
 }
 
-.main-header{
-    width: 100vw; 
-    height: 40vw; 
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+.smullen-button {
+    background-color: var(--lighter-red);
+    width:40%;
+    height: auto;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius:40px;
+  }
+  
+.smullen-button:hover {
+    opacity: 0.8;
+}
+
+.checked{
+    color: var(--lighter-orange);
+}
+/* header */
+.header-box{
+    width: 100%; 
+    height: 1000px; 
+
 }
 
 .header-logo{
     position: absolute;
     width: 30%;
-    height: 30%;
+    height: auto;
     top: 40px;
     left: 60px;
     
 }
 
 /* footer */
-.footer-logo{
-    position: relative;
-    top: 60px;
-    left: 100px;
-    width:150px; 
-    height:150px
+.footer-box {
+    background-color:var(--darker-orange);
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
 }
 
 .footer-contact{
-    position: relative;
-    top: 60px;
-    left: 140px;
-    width:150px; 
-    height:150px
+font-size: 90px;
+color: white;
 }
 
 .footer-text{
     color: var(--white);
-    position: relative;
-    top: 0px;
-    left: 300px;
+    list-style-type: none
 }
 
+
+/* agenda */
 .agenda-box{
-    color: black;
     background-color: var(--lighter-green);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-    padding: 20px
 }
 
 .agenda-title{
     color:white;
     text-align: center;
+    font-size: 70px;
 }
 
+.agenda-text{
+    color:black;
+}
+
+.agenda-list{
+    padding-left:40px;
+
+ }
+
+
+/* login */
 .login-box{
     color: white;
     background-color: var(--darker-red);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-
 }
 
+.login-title{
+    color:white;
+    text-align: center;
+    font-size: 70px;
+}
+
+.input[type=text], input[type=password] {
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+.login-button {
+    background-color: var(--lighter-orange);
+    width:40%;
+    height: auto;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius:20px;
+  }
+  
+.login-button:hover {
+    opacity: 0.8;
+  }
+
+/* colors/shadow */
 .lighter-red{
     color: var(--lighter-red);
 }
@@ -139,8 +191,18 @@ html, body {
     color:var(--lighter-green);
 }
 
-.persons-cal-price{
-    text-align: right;
-    position: relative;
-    top: 80px;
+.shadow{
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 }
+
+/* vegas */
+#vegas-image{
+    width: 100%; 
+    height: 700px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: red;
+    overflow: hidden;
+}
+

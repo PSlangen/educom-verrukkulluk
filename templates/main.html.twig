@@ -12,70 +12,114 @@
 
     <script type="text/javascript" language="javascript" src="assets/jquery/jquery-3.5.1.js"></script>
     <script type="text/javascript" language="javascript" src="assets/bootstrap/js/bootstrap.js"></script>
+ 
+    <link rel="stylesheet" href="node_modules/vegas/dist/vegas.css" />   
+    
+    <script src="assets/jquery/jquery-3.5.1.js"></script>
+    <script src="node_modules/vegas/dist/vegas.js"></script>
 
-</html>
+    <script>
+      $(document).ready( function() {
+        $("#vegas-image").vegas({      
+            overlay: 'node_modules/vegas/dist/overlays/02.png',     
+            slides: [
+                { src: "assets/img/spaghetti_carbonara.webp" },
+                { src: "assets/img/nasi_goreng.webp" },
+                { src: "assets/img/pizza_tonno.webp" },
+                { src: "assets/img/shakshuka.webp" },
+            ]
+        })
+      })  
+    </script>
+</head>
+
 <body>
+
 <div class="container-fluid">
-
-    <div class="row">
-        <div class="col-md-12">
-                </div>
-                    {% block header %}
-                    <div class="main-header background-image" style="background-image: url(assets/img/carbonara_wide.webp)";>
-                    <img class="header-logo" src="assets/img/logo-v2.png"> 
-                    </div>
-                    {% endblock %}
-                </div>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-md-3">
-            <div class="col-md-12">
-                <div class= "agenda-box"> 
-
-                    <div <i class="fa fa-calendar fa-3x "></i> </div>
-                    <div> <h3> Vegetarisch koken </h3> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee </div>
-                    
-                       
-                </div>
+	<div class="row">
+		<div class="col-md-12 p-0">
+            <div style="padding-bottom:30px">
+                {% block header %}
+                <div id="vegas-image"></div>
+                <div><img class="header-logo" src="assets/img/logo-v2.png"></div> 
+                {% endblock %}
             </div>
-            <div class="col-md-12">
-                <div class="login-box">
-                    <h1>Login</h1>
-                    <h1>Login</h1>
-                    <h1>Login</h1>
+		</div>
+	</div>
 
+
+	<div class="row">
+		<div class="col-md-3">
+			<div class="row">
+				<div class="col-md-12">
+                    <div style="padding:30px">
+                        <div class="shadow agenda-box p-3">
+                        {# begin agenda #}
+                            <ul class="fa-ul">
+                                <li> <h1 class="agenda-title"> Agenda </h1> </li>
+                                <li style= "padding-left:40px"><span class="fa-li"><i class="fa fa-calendar-day fa-3x white"></i></span> <h2> Vegetarisch koken </h2> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br><br></li>
+                                <li style= "padding-left:40px"><span class="fa-li"><i class="fa fa-calendar-day fa-3x white"></i></span> <h2> Vegetarisch koken </h2> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br><br></li>
+                                <li style= "padding-left:40px"><span class="fa-li"><i class="fa fa-calendar-day fa-3x white"></i></span> <h2> Vegetarisch koken </h2> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br><br></li>
+                                <li style= "padding-left:40px"><span class="fa-li"><i class="fa fa-calendar-day fa-3x white"></i></span> <h2> Vegetarisch koken </h2> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee <br><br></li>
+                                <li style= "padding-left:40px"><span class="fa-li"><i class="fa fa-calendar-day fa-3x white"></i></span> <h2> Vegetarisch koken </h2> Een workshop vegetarisch koken, onder leiding van Trientje Hupsakee </li>
+                            </ul>
+                        {# end agenda #}
+                        </div>
+                    </div>        
                 </div>
-            </div>      
-        </div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+                    <div style="padding:30px">
+                        <div class="shadow login-box">
+                            {# begin login #}
+                            <h1 class="login-title"> Login </h1> 
+                            <div style="padding:30px">
+                                <label for="uname"><b>Email</b></label> <br>
+                                <input type="text" name="uname" required> <br><br>
 
+                                <label for="psw"><b>Wachtwoord</b></label> <br>
+                                <input type="password" name="psw" required> <br><br>
 
-        <div class="col-md-9">
+                                <button class="login-button" type="submit"> <h2>Login</h2> </button>
+                            </div>
+                            {# end login #}
+                        </div>    
+                    </div>        
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-9">
             {%  block content %}
             {%  endblock %}
-        </div>
-    </div>
+		</div>
 
 
-    <div class="row">
-        <div class="col-md-12 " style= "background-color: var(--darker-orange);">
-            <div> 
-                <img class="footer-logo" src="assets/img/verrukkulluk-pay-off.png"> 
-                <img class="footer-contact" src="assets/img/verrukkulluk-contact.png"> 
+	</div>
+
+	<div class="shadow footer-box">
+        <div class= "row">
+            <div class="col-md-12 d-flex align-items-start">
+                <div class="row">
+			        <div class="col-md-6">
+                        <img class="footer-logo" src="assets/img/verrukkulluk-pay-off.png">
+				    </div>
+				    <div class="col-md-6">
+                        <ul class="footer-text" style="list-style-type: none">
+                            <li> <h1 class="footer-contact">Contact</h1> </li>
+                            <li> Verrukkulluk.nl </li>
+                            <li> Poststraat 2b </li>
+                            <li> Sittard </li>
+                            <li> Info@verrukkulluk.nl </li>
+                        <ul>
+				    </div>
+			    </div>
             </div>
-
-            <div class="footer-text"> 
-            <br><br><br>Verrukkulluk.nl <br>
-            Poststraat 2b <br>
-            Sittard <br>
-            Info@verrukkulluk.nl<br><br><br>
-            </div>
-        </div>
-    </div>
-
-
+		</div>
+	</div>
 </div>
 
 </body>
+</html>
+
