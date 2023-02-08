@@ -69,8 +69,22 @@ html, body {
     overflow: hidden;
 }
 
+.detail-image {
+    height: 100vh;
+    max-height: 500px;
+    width: auto;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: red;
+    overflow: hidden;
+}
+
 .smullen-button {
     background-color: var(--lighter-red);
+    color: white;
+    font-family: "pretty_lilyregular";
+    text-align: center;
     width:40%;
     height: auto;
     color: white;
@@ -142,7 +156,6 @@ color: white;
 
 .agenda-list{
     padding-left:40px;
-
  }
 
 
@@ -206,3 +219,32 @@ color: white;
     overflow: hidden;
 }
 
+/* Ingredients */
+.hoeveelheid{
+    color: var(--lighter-green);
+    font-family: 'pretty_lilyregular';
+    font-size: 24px;
+}
+
+.ingredient-name{
+    color: var(--lighter-green);
+    font-family: 'pretty_lilyregular';
+    font-size: 40px;
+}
+
+.ingredient-image{
+    height: 100%;
+    width: 100px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: red;
+    overflow: hidden;
+}
+
+/* Recipe */
+.recipe-title{
+    color: var(--lighter-green);
+    font-family: 'pretty_lilyregular';
+    font-size: 60px; 
+}

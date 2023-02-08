@@ -43,7 +43,6 @@ $recipeData = $recipe->selectRecipe(0);
 $groceriesData = $groceries->AddGroceries(4,1);
 
 
-
 /*
 URL:
 http://localhost/index.php?recipe_id=4&action=detail
@@ -63,7 +62,7 @@ switch($action) {
         }
 
         case "detail": {
-            $data = $recipe->selectRecipe(2);
+            $data = $recipe->selectRecipe($recipe_id);
             $template = 'detail.html.twig';
             $title = "detail pagina";
             break;

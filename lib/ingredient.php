@@ -23,11 +23,13 @@ class ingredient {
                 "recipe_id"=>$ingredient["recipe_id"],
                 "article_id"=>$ingredient["article_id"],
                 "name" => $article["name"],
+                "description" => $article["description"],
                 "price" => $article["price"],
                 "units" => $article["units"],
                 "package" => $article["package"],
                 "number" => $ingredient["number"],
-                "calories" => $article["calories"]
+                "calories" => $article["calories"],
+                "image" => $article["image"]
             ];
         }
 

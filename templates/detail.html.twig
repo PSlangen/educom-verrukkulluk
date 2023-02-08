@@ -1,38 +1,77 @@
 {% extends "main.html.twig" %}
 
-
-{% block header %}
-<h1>Hallo Bram</h1>
-{% endblock %}
-
-
-
 {% block content %}
 
-<div class="row">
-    {% for record in data %}
-        <div class="col-md-12" style= "background-color: red; border-radius: 40px;" >
-            <li>
-                <img src="{{ record.image }}" style="width: 100px; height: 100px;">
+<div class="container-fluid">
+	<div class="row">
+        {% for record in data %}
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 p-0">
+                        <div class="detail-image" style="background-image: url({{record.image}})"> </div>
+                    </div>
+                    <div class="col-md-6" style="border-style: solid;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                {% include 'persons_price_kcal.html' %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="recipe-title">{{ record.title }}</span>
+                            </div>
+                            <div class="col-md-6">
+                                {% include 'rating.html' %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="ingredient-name"> Keuken &nbsp&nbsp </span> {{record.kitchen}}
+                            </div>
+                            <div class="col-md-6">
+                                <span class="ingredient-name"> Type &nbsp&nbsp</span> {{record.type}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{record.short_description}}<br><br>
+                                {{record.long_description}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                Op lijst
+                            </div>
+                            <div class="col-md-6">
+                                Favoriet
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <strong>{{ record.title }}</strong>
-                {{record.short_description}}
-                {{record.long_description}}
-
-                <ul>
-                    {% for ingr in record.ingredients %}
-                        <li>
-                            <span {% if ingr.id < 2 %}style='color: #F00'{% endif %}>{{  ingr.name }}</span>
-
-                            {# if #}
-                            {%  if ingr.id == 3 %}
-                                <strong>Dit is ID 3!</strong>
-                            {%  endif  %}
-                        </li>
-                    {% endfor %}
-                </ul>
-                </li>
-        </div>
-    {% endfor %}
-
+	</div>
+	<div class="row">
+		<div class="col-md-12" style="border-style: solid;">
+            <ul style="list-style: none">
+                {% for ingr in record.ingredients %}
+                    <li> 
+                        <div class="row">
+                            <div class="col-md-1">
+                                <div class="ingredient-image" style="background-image: url({{ingr.image}})"> </div>
+                            </div>
+                            <div class="col-md-11">
+                                <span class="ingredient-name">{{ingr.name}} <br></span>
+                                {{ingr.description}} <br>
+                                <span class="Hoeveelheid"> Hoeveelheid: </span>
+                                {{ingr.number}}{{ingr.units}}
+                            </div>
+                        </div>        
+                    </li>
+                {% endfor %}
+            </ul>
+		</div>
+	</div>
+</div>
+{% endfor %}
 {% endblock %}

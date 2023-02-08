@@ -27,13 +27,7 @@
 							<div class="lighter-green"> <h1>{{ record.title }}</h1> </div>
 						</div>
 						<div class="col-md-6 p-4 d-flex justify-content-end">
-							<div>
-							<span class="fa fa-star fa-lg checked"></span>
-							<span class="fa fa-star fa-lg checked"></span>
-							<span class="fa fa-star fa-lg checked"></span>
-							<span class="fa fa-star fa-lg "></span>
-							<span class="fa fa-star fa-lg "></span>
-							</div>
+							<div style="text-align:right"> {% include 'rating.html' %} </div>
 						</div>
 					</div>
 					<div class="row">
@@ -43,14 +37,10 @@
 					</div>
 					<div class="row">
 						<div class="col-md-6 p-4">
-							<button class="smullen-button" type="submit"> <h2>Smullen!</h2> </button>
+							<a class="smullen-button" type="submit" href="index.php?recipe_id={{record.id}}&action=detail" style="color: white; font-family: 'pretty_lilyregular'; font-size: 40px; text-align: center;"> Smullen! </a>
 						</div>
 						<div class="col-md-6 p-4 d-flex align-items-end justify-content-end">
-							<div style="text-align:right">
-							<i class="fa fa-user fa-1x lighter-red"></i> 4 &nbsp &nbsp
-							<i class="fa fa-euro-sign lighter-red"></i>{{record.price|round()/100}} &nbsp &nbsp
-							<i class="fa fa-fire fa-1x lighter-red"></i>{{record.calories/4|round}} &nbsp &nbsp  
-							</div>
+							{% include 'persons_price_kcal.html' %}
 						</div>
 					</div>
 				</div>

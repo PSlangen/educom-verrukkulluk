@@ -23,13 +23,12 @@
         $("#vegas-image").vegas({      
             overlay: 'node_modules/vegas/dist/overlays/02.png',     
             slides: [
-                { src: "assets/img/spaghetti_carbonara.webp" },
-                { src: "assets/img/nasi_goreng.webp" },
-                { src: "assets/img/pizza_tonno.webp" },
-                { src: "assets/img/shakshuka.webp" },
+                {% for record in data %}
+                { src: "{{record.image}}" },
+                {% endfor %}
             ]
         })
-      })  
+      })
     </script>
 </head>
 
@@ -39,10 +38,8 @@
 	<div class="row">
 		<div class="col-md-12 p-0">
             <div style="padding-bottom:30px">
-                {% block header %}
                 <div id="vegas-image"></div>
-                <div><img class="header-logo" src="assets/img/logo-v2.png"></div> 
-                {% endblock %}
+                <a href="index.php"><img class="header-logo"  src="assets/img/logo-v2.png"></a> 
             </div>
 		</div>
 	</div>
