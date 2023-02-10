@@ -1,0 +1,17 @@
+<ul style="list-style: none">
+    {% for ingr in record.ingredients %}
+        <li> 
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="ingredient-image" style="background-image: url({{ingr.image}})"> </div>
+                </div>
+                <div class="col-md-6">
+                    <span class="ingredient-name">{{ingr.name}} <br></span>
+                    {{ingr.description}} <br>
+                    <span class="Hoeveelheid"> Hoeveelheid: </span>
+                    {{ingr.number}}{{ingr.units}}
+                </div>
+            </div>        
+        </li>
+    {% endfor %}
+</ul>

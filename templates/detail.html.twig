@@ -5,73 +5,63 @@
 <div class="container-fluid">
 	<div class="row">
         {% for record in data %}
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-6 p-0">
-                        <div class="detail-image" style="background-image: url({{record.image}})"> </div>
-                    </div>
-                    <div class="col-md-6" style="border-style: solid;">
-                        <div class="row">
-                            <div class="col-md-6">
-                                {% include 'persons_price_kcal.html' %}
-                            </div>
+            <div style="padding:30px">
+                <div class="col-md-12 shadow">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="detail-image" style="background-image: url({{record.image}})"> </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <span class="recipe-title">{{ record.title }}</span>
+                        <div class="col-md-6 p-5">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {% include 'persons_price_kcal.html' %}
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                {% include 'rating.html' %}
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <span class="recipe-title">{{ record.title }}</span>
+                                </div>
+                                <div class="col-md-3 d-flex align-items-center">
+                                    {% include 'rating.html' %}
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <span class="ingredient-name"> Keuken &nbsp&nbsp </span> {{record.kitchen}}
+                            <div class="row">
+                                <div class="col-md-6 p-2">
+                                    <span class="ingredient-name"> Keuken &nbsp&nbsp </span> {{record.kitchen}}
+                                </div>
+                                <div class="col-md-6 p-2">
+                                    <span class="ingredient-name"> Type &nbsp&nbsp</span> {{record.type}}
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <span class="ingredient-name"> Type &nbsp&nbsp</span> {{record.type}}
+                            <div class="row">
+                                <div class="col-md-12 p-2">
+                                    {{record.short_description}}<br><br>
+                                    {{record.long_description}}
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                {{record.short_description}}<br><br>
-                                {{record.long_description}}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                Op lijst
-                            </div>
-                            <div class="col-md-6">
-                                Favoriet
+                            <div class="row">
+                                <div class="col-md-6 p-4">
+                                    <a class="oplijst-button" type="submit" style="color: white; font-family: 'pretty_lilyregular'; font-size: 40px; text-align: center;"> Op lijst </a>
+                                    {#  href="index.php?recipe_id={{record.id}}&action=detail" #}
+                                </div>
+                                <div class="col-md-6 p-4 d-flex justify-content-end">
+                                    <span class="fa fa-heart fa-2x notfavorite"></span>
+                                    <span class="fa fa-heart fa-2x favorite "></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-	</div>
-	<div class="row">
-		<div class="col-md-12" style="border-style: solid;">
-            <ul style="list-style: none">
-                {% for ingr in record.ingredients %}
-                    <li> 
-                        <div class="row">
-                            <div class="col-md-1">
-                                <div class="ingredient-image" style="background-image: url({{ingr.image}})"> </div>
-                            </div>
-                            <div class="col-md-11">
-                                <span class="ingredient-name">{{ingr.name}} <br></span>
-                                {{ingr.description}} <br>
-                                <span class="Hoeveelheid"> Hoeveelheid: </span>
-                                {{ingr.number}}{{ingr.units}}
-                            </div>
-                        </div>        
-                    </li>
-                {% endfor %}
-            </ul>
-		</div>
-	</div>
+            </div>
+            <div class="row p-0">
+                <div style="padding:30px">
+                    <div class="col-md-12" style="overflow: hidden">
+                        {% include 'tabs.html' %} 
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
 </div>
-{% endfor %}
+
 {% endblock %}

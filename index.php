@@ -42,7 +42,6 @@ $recipeinfoData = $recipeinfo->selectInfo(2, 'F');
 $recipeData = $recipe->selectRecipe(0);
 $groceriesData = $groceries->AddGroceries(4,1);
 
-
 /*
 URL:
 http://localhost/index.php?recipe_id=4&action=detail

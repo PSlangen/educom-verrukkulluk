@@ -69,37 +69,29 @@ html, body {
     overflow: hidden;
 }
 
-.detail-image {
-    height: 100vh;
-    max-height: 500px;
-    width: auto;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: red;
-    overflow: hidden;
-}
+
 
 .smullen-button {
     background-color: var(--lighter-red);
     color: white;
     font-family: "pretty_lilyregular";
     text-align: center;
-    width:40%;
+    width: 150px;
     height: auto;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius:40px;
+    border-radius:30px;
   }
   
 .smullen-button:hover {
     opacity: 0.8;
 }
 
-.checked{
+.checked-star{
     color: var(--lighter-orange);
 }
+
 /* header */
 .header-box{
     width: 100%; 
@@ -219,6 +211,39 @@ color: white;
     overflow: hidden;
 }
 
+/* detail page */
+.detail-image {
+    height: 700px;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: red;
+    overflow: hidden;
+}
+
+.notfavorite {
+    color: rgb(182, 182, 182);
+    border-color: var(--lighter-red);
+}
+.favorite {
+    color: var(--lighter-red);
+    border-color: var(--lighter-red);
+}
+
+.oplijst-button {
+    background-color: var(--lighter-red);
+    color: white;
+    font-family: "pretty_lilyregular";
+    text-align: center;
+    width: 150px;
+    height: auto;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius:30px;
+}
+
 /* Ingredients */
 .hoeveelheid{
     color: var(--lighter-green);
@@ -233,8 +258,8 @@ color: white;
 }
 
 .ingredient-image{
-    height: 100%;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -242,9 +267,39 @@ color: white;
     overflow: hidden;
 }
 
+/* Preparation */
+.prep-number{
+    color:white;
+    background-color: var(--lighter-orange);
+    text-align: center;
+    border-radius: 100px;
+    height:100px;
+    width:100px;
+    font-size:65px;
+}
+
+.prep-text{
+    font-size:20px;
+}
+
+
+/* comments */
+.user-image{
+    /* background-color: white; */
+    border-width: 2px;
+    border-color: var(--lighter-orange);
+    /* border-radius: 150px; */
+    height:150px;
+    width:150px;
+}
+
 /* Recipe */
 .recipe-title{
     color: var(--lighter-green);
     font-family: 'pretty_lilyregular';
     font-size: 60px; 
+}
+
+.tabs{
+    border-radius:100px;
 }
