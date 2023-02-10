@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 06 feb 2023 om 11:31
--- Serverversie: 10.4.27-MariaDB
--- PHP-versie: 8.2.0
+-- Generation Time: Feb 10, 2023 at 05:30 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `article`
+-- Table structure for table `article`
 --
 
 CREATE TABLE `article` (
@@ -34,36 +34,37 @@ CREATE TABLE `article` (
   `price` decimal(11,0) NOT NULL,
   `units` text NOT NULL,
   `package` text NOT NULL,
-  `calories` int(11) DEFAULT NULL
+  `calories` int(11) DEFAULT NULL,
+  `image` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `article`
+-- Dumping data for table `article`
 --
 
-INSERT INTO `article` (`id`, `name`, `description`, `price`, `units`, `package`, `calories`) VALUES
-(1, 'Spaghetti', 'Lorem Ipsum', '145', 'g', '500', 300),
-(2, 'Eieren', 'Lorem Ipsum', '250', 'stuks', '12', 150),
-(3, 'Pancetta', 'Lorem Ipsum', '395', 'g', '200', 200),
-(4, 'Parmezaanse Kaas', 'Lorem Ipsum', '395', 'g', '200', 600),
-(5, 'Pandan Rijst', 'Lorem Ipsum', '150', 'g', '400', 500),
-(6, 'Nasi Groenten', 'Lorem Ipsum', '180', 'g', '500', 200),
-(7, 'Spekreepjes', 'Lorem Ipsum', '395', 'g', '250', 500),
-(8, 'Knoflook', 'Lorem Ipsum', '120', 'tenen', '20', 50),
-(9, 'Ketjap Manis', 'Lorem Ipsum', '295', 'ml', '250', 100),
-(10, 'Tomato Frito', 'Lorem Ipsum', '145', 'g', '350', 150),
-(11, 'Tonijn', 'Lorem Ipsum', '245', 'g', '160', 200),
-(12, 'Ui', 'Lorem Ipsum', '195', 'stuks', '10', 80),
-(13, 'Geraspte Kaas', 'Lorem Ipsum', '295', 'g', '200', 700),
-(14, 'Pizza Bodem', 'Lorem Ipsum', '345', 'stuks', '2', 350),
-(15, 'Tomatenblokjes', 'Lorem Ipsum', '95', 'g', '400', 250),
-(16, 'Paprika', 'Lorem Ipsum', '175', 'stuks', '3', 70),
-(17, 'Harissa', 'Lorem Ipsum', '315', 'g', '230', 220);
+INSERT INTO `article` (`id`, `name`, `description`, `price`, `units`, `package`, `calories`, `image`) VALUES
+(1, 'Spaghetti', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '145', 'g', '500', 750, 'assets/img/ingredients/spaghetti.jpg'),
+(2, 'Eieren', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '250', 'stuks', '10', 1080, 'assets/img/ingredients/eieren.jpg'),
+(3, 'Pancetta', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '395', 'g', '200', 940, 'assets/img/ingredients/pancetta.jpg'),
+(4, 'Parmezaanse Kaas', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '395', 'g', '200', 860, 'assets/img/ingredients/parmezaanse_kaas.jpg'),
+(5, 'Pandan Rijst', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '150', 'g', '400', 1400, 'assets/img/ingredients/pandan_rijst.jpg'),
+(6, 'Nasi Groenten', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '180', 'g', '500', 180, 'assets/img/ingredients/nasi_groenten.jpg'),
+(7, 'Spekreepjes', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '395', 'g', '250', 700, 'assets/img/ingredients/spekreepjes.jpg'),
+(8, 'Knoflook', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '120', 'tenen', '20', 130, 'assets/img/ingredients/knoflook.jpg'),
+(9, 'Ketjap Manis', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '295', 'ml', '500', 600, 'assets/img/ingredients/ketjap_manis.jpg'),
+(10, 'Tomato Frito', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '145', 'g', '350', 280, 'assets/img/ingredients/tomato_frito.jpg'),
+(11, 'Tonijn', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '245', 'g', '160', 130, 'assets/img/ingredients/tonijn.jpg'),
+(12, 'Ui', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '195', 'stuks', '3', 400, 'assets/img/ingredients/ui.jpg'),
+(13, 'Geraspte Kaas', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '295', 'g', '150', 740, 'assets/img/ingredients/geraspte_kaas.jpg'),
+(14, 'Pizza Bodem', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '345', 'stuks', '2', 680, 'assets/img/ingredients/pizza_bodem.jpg'),
+(15, 'Tomatenblokjes', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '95', 'g', '400', 90, 'assets/img/ingredients/tomatenblokjes.jpg'),
+(16, 'Paprika', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '175', 'stuks', '3', 100, 'assets/img/ingredients/paprika.jpg'),
+(17, 'Harissa', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', '315', 'g', '230', 220, 'assets/img/ingredients/harissa.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `groceries`
+-- Table structure for table `groceries`
 --
 
 CREATE TABLE `groceries` (
@@ -74,20 +75,20 @@ CREATE TABLE `groceries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `groceries`
+-- Dumping data for table `groceries`
 --
 
 INSERT INTO `groceries` (`id`, `article_id`, `user_id`, `number`) VALUES
-(1, 10, 1, 316),
-(2, 11, 1, 474),
-(3, 12, 1, 158),
-(4, 13, 1, 316),
-(5, 14, 1, 316);
+(1, 10, 1, 2524),
+(2, 11, 1, 3786),
+(3, 12, 1, 1262),
+(4, 13, 1, 2858),
+(5, 14, 1, 2524);
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `ingredient`
+-- Table structure for table `ingredient`
 --
 
 CREATE TABLE `ingredient` (
@@ -98,7 +99,7 @@ CREATE TABLE `ingredient` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `ingredient`
+-- Dumping data for table `ingredient`
 --
 
 INSERT INTO `ingredient` (`id`, `recipe_id`, `article_id`, `number`) VALUES
@@ -126,7 +127,7 @@ INSERT INTO `ingredient` (`id`, `recipe_id`, `article_id`, `number`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `kitchentype`
+-- Table structure for table `kitchentype`
 --
 
 CREATE TABLE `kitchentype` (
@@ -136,7 +137,7 @@ CREATE TABLE `kitchentype` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `kitchentype`
+-- Dumping data for table `kitchentype`
 --
 
 INSERT INTO `kitchentype` (`id`, `record_type`, `description`) VALUES
@@ -153,7 +154,7 @@ INSERT INTO `kitchentype` (`id`, `record_type`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `recipe`
+-- Table structure for table `recipe`
 --
 
 CREATE TABLE `recipe` (
@@ -169,19 +170,19 @@ CREATE TABLE `recipe` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `recipe`
+-- Dumping data for table `recipe`
 --
 
 INSERT INTO `recipe` (`id`, `kitchen_id`, `type_id`, `user_id`, `date_added`, `title`, `short_description`, `long_description`, `image`) VALUES
-(2, 5, 1, 1, '2023-01-18', 'Spaghetti Carbonara', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'assets\\img\\spaghetti_carbonara.webp'),
-(3, 7, 1, 1, '2023-01-24', 'Nasi Goreng', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'assets\\img\\nasi_goreng.webp'),
-(4, 5, 2, 1, '2023-01-24', 'Pizza Tonno', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'assets\\img\\pizza_tonno.webp'),
-(5, 8, 3, 1, '2023-01-24', 'Shakshuka', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'assets\\img\\shakshuka.webp');
+(2, 5, 1, 1, '2023-01-18', 'Spaghetti Carbonara', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', 'Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!</p>\n<p>Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!</p>\n<p>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?', 'assets/img/spaghetti_carbonara.webp'),
+(3, 7, 1, 1, '2023-01-24', 'Nasi Goreng', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', 'Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!</p>\n<p>Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!</p>\n<p>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?', 'assets/img/nasi_goreng.webp'),
+(4, 5, 2, 1, '2023-01-24', 'Pizza Tonno', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', 'Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!</p>\n<p>Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!</p>\n<p>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?', 'assets/img/pizza_tonno.webp'),
+(5, 8, 3, 1, '2023-01-24', 'Shakshuka', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!', 'Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!</p>\n<p>Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!</p>\n<p>Consequatur rerum amet fuga expedita sunt et tempora saepe? Iusto nihil explicabo perferendis quos provident delectus ducimus necessitatibus reiciendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?', 'assets/img/shakshuka.webp');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `recipeinfo`
+-- Table structure for table `recipeinfo`
 --
 
 CREATE TABLE `recipeinfo` (
@@ -195,7 +196,7 @@ CREATE TABLE `recipeinfo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `recipeinfo`
+-- Dumping data for table `recipeinfo`
 --
 
 INSERT INTO `recipeinfo` (`id`, `record_type`, `recipe_id`, `user_id`, `date`, `numerical`, `text`) VALUES
@@ -204,26 +205,6 @@ INSERT INTO `recipeinfo` (`id`, `record_type`, `recipe_id`, `user_id`, `date`, `
 (7, 'R', 2, NULL, NULL, '4', NULL),
 (11, 'C', 2, 1, NULL, NULL, 'Bah'),
 (15, 'F', 2, 1, NULL, NULL, NULL),
-(16, 'F', 2, 1, NULL, NULL, NULL),
-(17, 'F', 2, 1, NULL, NULL, NULL),
-(18, 'F', 2, 1, NULL, NULL, NULL),
-(19, 'F', 2, 1, NULL, NULL, NULL),
-(20, 'F', 2, 1, NULL, NULL, NULL),
-(21, 'F', 2, 1, NULL, NULL, NULL),
-(22, 'F', 2, 1, NULL, NULL, NULL),
-(23, 'F', 2, 1, NULL, NULL, NULL),
-(24, 'F', 2, 1, NULL, NULL, NULL),
-(25, 'F', 2, 1, NULL, NULL, NULL),
-(26, 'F', 2, 1, NULL, NULL, NULL),
-(27, 'F', 2, 1, NULL, NULL, NULL),
-(28, 'F', 2, 1, NULL, NULL, NULL),
-(29, 'F', 2, 1, NULL, NULL, NULL),
-(30, 'F', 2, 1, NULL, NULL, NULL),
-(31, 'F', 2, 1, NULL, NULL, NULL),
-(32, 'F', 2, 1, NULL, NULL, NULL),
-(33, 'F', 2, 1, NULL, NULL, NULL),
-(34, 'F', 2, 1, NULL, NULL, NULL),
-(35, 'F', 2, 1, NULL, NULL, NULL),
 (36, 'F', 2, 1, NULL, NULL, NULL),
 (37, 'F', 2, 1, NULL, NULL, NULL),
 (38, 'F', 2, 1, NULL, NULL, NULL),
@@ -414,12 +395,74 @@ INSERT INTO `recipeinfo` (`id`, `record_type`, `recipe_id`, `user_id`, `date`, `
 (223, 'F', 2, 1, NULL, NULL, NULL),
 (224, 'F', 2, 1, NULL, NULL, NULL),
 (225, 'F', 2, 1, NULL, NULL, NULL),
-(226, 'F', 2, 1, NULL, NULL, NULL);
+(226, 'F', 2, 1, NULL, NULL, NULL),
+(227, 'F', 2, 1, NULL, NULL, NULL),
+(228, 'F', 2, 1, NULL, NULL, NULL),
+(229, 'F', 2, 1, NULL, NULL, NULL),
+(230, 'F', 2, 1, NULL, NULL, NULL),
+(231, 'F', 2, 1, NULL, NULL, NULL),
+(232, 'F', 2, 1, NULL, NULL, NULL),
+(233, 'F', 2, 1, NULL, NULL, NULL),
+(234, 'F', 2, 1, NULL, NULL, NULL),
+(235, 'F', 2, 1, NULL, NULL, NULL),
+(236, 'F', 2, 1, NULL, NULL, NULL),
+(237, 'F', 2, 1, NULL, NULL, NULL),
+(238, 'F', 2, 1, NULL, NULL, NULL),
+(239, 'F', 2, 1, NULL, NULL, NULL),
+(240, 'F', 2, 1, NULL, NULL, NULL),
+(241, 'F', 2, 1, NULL, NULL, NULL),
+(242, 'F', 2, 1, NULL, NULL, NULL),
+(243, 'F', 2, 1, NULL, NULL, NULL),
+(244, 'F', 2, 1, NULL, NULL, NULL),
+(245, 'F', 2, 1, NULL, NULL, NULL),
+(246, 'F', 2, 1, NULL, NULL, NULL),
+(247, 'F', 2, 1, NULL, NULL, NULL),
+(248, 'F', 2, 1, NULL, NULL, NULL),
+(249, 'F', 2, 1, NULL, NULL, NULL),
+(250, 'F', 2, 1, NULL, NULL, NULL),
+(251, 'F', 2, 1, NULL, NULL, NULL),
+(252, 'F', 2, 1, NULL, NULL, NULL),
+(253, 'F', 2, 1, NULL, NULL, NULL),
+(254, 'F', 2, 1, NULL, NULL, NULL),
+(255, 'F', 2, 1, NULL, NULL, NULL),
+(256, 'F', 2, 1, NULL, NULL, NULL),
+(257, 'F', 2, 1, NULL, NULL, NULL),
+(258, 'F', 2, 1, NULL, NULL, NULL),
+(259, 'F', 2, 1, NULL, NULL, NULL),
+(260, 'F', 2, 1, NULL, NULL, NULL),
+(261, 'F', 2, 1, NULL, NULL, NULL),
+(262, 'F', 2, 1, NULL, NULL, NULL),
+(263, 'F', 2, 1, NULL, NULL, NULL),
+(264, 'F', 2, 1, NULL, NULL, NULL),
+(265, 'F', 2, 1, NULL, NULL, NULL),
+(266, 'F', 2, 1, NULL, NULL, NULL),
+(267, 'F', 2, 1, NULL, NULL, NULL),
+(268, 'F', 2, 1, NULL, NULL, NULL),
+(269, 'F', 2, 1, NULL, NULL, NULL),
+(270, 'F', 2, 1, NULL, NULL, NULL),
+(271, 'F', 2, 1, NULL, NULL, NULL),
+(272, 'F', 2, 1, NULL, NULL, NULL),
+(273, 'F', 2, 1, NULL, NULL, NULL),
+(274, 'F', 2, 1, NULL, NULL, NULL),
+(275, 'F', 2, 1, NULL, NULL, NULL),
+(276, 'F', 2, 1, NULL, NULL, NULL),
+(277, 'F', 2, 1, NULL, NULL, NULL),
+(278, 'F', 2, 1, NULL, NULL, NULL),
+(279, 'F', 2, 1, NULL, NULL, NULL),
+(280, 'F', 2, 1, NULL, NULL, NULL),
+(281, 'F', 2, 1, NULL, NULL, NULL),
+(282, 'F', 2, 1, NULL, NULL, NULL),
+(283, 'F', 2, 1, NULL, NULL, NULL),
+(284, 'F', 2, 1, NULL, NULL, NULL),
+(285, 'F', 2, 1, NULL, NULL, NULL),
+(286, 'F', 2, 1, NULL, NULL, NULL),
+(287, 'P', 2, 1, NULL, '2', 'Rasp de parmezaanse kaas en voeg toe aan de geklopte eieren.'),
+(288, 'P', 2, 1, NULL, '3', 'Snij de panceta in kleine blokjes en bak deze tot ze krokant zijn.');
 
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -431,24 +474,24 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Gegevens worden geëxporteerd voor tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `user_name`, `password`, `email`, `image`) VALUES
 (1, 'PaulSlangen', 'verrukkulluk', 'plg.slangen@gmail.com', NULL);
 
 --
--- Indexen voor geëxporteerde tabellen
+-- Indexes for dumped tables
 --
 
 --
--- Indexen voor tabel `article`
+-- Indexes for table `article`
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `groceries`
+-- Indexes for table `groceries`
 --
 ALTER TABLE `groceries`
   ADD PRIMARY KEY (`id`),
@@ -456,7 +499,7 @@ ALTER TABLE `groceries`
   ADD KEY `fk_user_groceries` (`user_id`);
 
 --
--- Indexen voor tabel `ingredient`
+-- Indexes for table `ingredient`
 --
 ALTER TABLE `ingredient`
   ADD PRIMARY KEY (`id`),
@@ -464,13 +507,13 @@ ALTER TABLE `ingredient`
   ADD KEY `fk_recipe_ingredient` (`recipe_id`);
 
 --
--- Indexen voor tabel `kitchentype`
+-- Indexes for table `kitchentype`
 --
 ALTER TABLE `kitchentype`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `recipe`
+-- Indexes for table `recipe`
 --
 ALTER TABLE `recipe`
   ADD PRIMARY KEY (`id`),
@@ -479,7 +522,7 @@ ALTER TABLE `recipe`
   ADD KEY `fk_user_recipe` (`user_id`);
 
 --
--- Indexen voor tabel `recipeinfo`
+-- Indexes for table `recipeinfo`
 --
 ALTER TABLE `recipeinfo`
   ADD PRIMARY KEY (`id`),
@@ -487,76 +530,76 @@ ALTER TABLE `recipeinfo`
   ADD KEY `fk_user_recipeinfo` (`user_id`);
 
 --
--- Indexen voor tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT voor geëxporteerde tabellen
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT voor een tabel `article`
+-- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT voor een tabel `groceries`
+-- AUTO_INCREMENT for table `groceries`
 --
 ALTER TABLE `groceries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT voor een tabel `ingredient`
+-- AUTO_INCREMENT for table `ingredient`
 --
 ALTER TABLE `ingredient`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT voor een tabel `kitchentype`
+-- AUTO_INCREMENT for table `kitchentype`
 --
 ALTER TABLE `kitchentype`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT voor een tabel `recipe`
+-- AUTO_INCREMENT for table `recipe`
 --
 ALTER TABLE `recipe`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT voor een tabel `recipeinfo`
+-- AUTO_INCREMENT for table `recipeinfo`
 --
 ALTER TABLE `recipeinfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=289;
 
 --
--- AUTO_INCREMENT voor een tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Beperkingen voor geëxporteerde tabellen
+-- Constraints for dumped tables
 --
 
 --
--- Beperkingen voor tabel `groceries`
+-- Constraints for table `groceries`
 --
 ALTER TABLE `groceries`
   ADD CONSTRAINT `fk_article_groceries` FOREIGN KEY (`article_id`) REFERENCES `article` (`id`),
   ADD CONSTRAINT `fk_user_groceries` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 
 --
--- Beperkingen voor tabel `ingredient`
+-- Constraints for table `ingredient`
 --
 ALTER TABLE `ingredient`
   ADD CONSTRAINT `fk_recipe_ingredient` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`id`);
 
 --
--- Beperkingen voor tabel `recipeinfo`
+-- Constraints for table `recipeinfo`
 --
 ALTER TABLE `recipeinfo`
   ADD CONSTRAINT `fk_user_recipeinfo` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
