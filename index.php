@@ -42,34 +42,63 @@ $recipeinfoData = $recipeinfo->selectInfo(2, 'F');
 $recipeData = $recipe->selectRecipe(0);
 $groceriesData = $groceries->AddGroceries(4,1);
 
+$addFavorite = $recipeinfo->addFavorite(2,1);
+$deleteFavorite = $recipeinfo->deleteFavorite(2,1);
+
 /*
 URL:
 http://localhost/index.php?recipe_id=4&action=detail
 */
 
 $recipe_id = isset($_GET["recipe_id"]) ? $_GET["recipe_id"] : "";
-$action = isset($_GET["action"]) ? $_GET["action"] : "homepage";
+$user_id = isset($_GET["user_id"]) ? $_GET["user_id"] : "";
+
+$action = isset($_GET["action"]) ? $_GET["action"] : "groceries";
 
 
 switch($action) {
 
-        case "homepage": {
-            $data = $recipe->selectRecipe();
-            $template = 'homepage.html.twig';
-            $title = "homepage";
-            break;
-        }
+    case "homepage": {
+        $data = $recipe->selectRecipe();
+        $template = 'homepage.html.twig';
+        $title = "homepage";
+        break;
+    }
 
-        case "detail": {
-            $data = $recipe->selectRecipe($recipe_id);
-            $template = 'detail.html.twig';
-            $title = "detail pagina";
-            break;
-        }
+    case "detail": {
+        $data = $recipe->selectRecipe($recipe_id);
+        $template = 'detail.html.twig';
+        $title = "detail pagina";
+        break;
+    }
 
-        /// etc
+    case "groceries": {
+        $data = $recipe->selectRecipe($recipe_id);
+        $template = 'groceries.html.twig';
+        $title = "Boodschappen";
+        break;
+    }
+}
+
+switch($favorite) {
+
+    case "addFavorite": {
+        $recipeinfo->addFavorite(2, 1);
+        $result = ["status" => true];
+        $JSON = json_encode($result);
+        break;
+    }
+
+    case "deleteFavorite": {
+        $recipeinfo->deleteFavorite(2, 1);
+        $result = ["status" => false];
+        $JSON = json_encode($result);
+        break;
+    }
 
 }
+
+
 
 
 /// Onderstaande code schrijf je idealiter in een layout klasse of iets dergelijks
@@ -78,4 +107,4 @@ $template = $twig->load($template);
 
 
 /// En tonen die handel!
-echo $template->render(["title" => $title, "data" => $data]);
+echo $template->render(["title" => $title, "data" => $data, "user_id" => 1]);

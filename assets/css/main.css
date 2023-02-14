@@ -213,7 +213,7 @@ color: white;
 
 /* detail page */
 .detail-image {
-    height: 700px;
+    height: 800px;
     width: 100%;
     background-position: center center;
     background-size: cover;
@@ -223,7 +223,7 @@ color: white;
 }
 
 .notfavorite {
-    color: rgb(182, 182, 182);
+    color: lightgrey;
     border-color: var(--lighter-red);
 }
 .favorite {
@@ -302,4 +302,10 @@ color: white;
 
 .tabs{
     border-radius:100px;
+}
+
+.tabs-font{
+    font-family: 'pretty_lilyregular';
+    color: var(--darker-green);
+    font-size:40px;
 }

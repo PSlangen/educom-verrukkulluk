@@ -13,40 +13,52 @@
                         </div>
                         <div class="col-md-6 p-5">
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-6 p-2">
                                     {% include 'persons_price_kcal.html' %}
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-md-8 p-2">
                                     <span class="recipe-title">{{ record.title }}</span>
                                 </div>
-                                <div class="col-md-3 d-flex align-items-center">
+                                <div class="col-md-4 p-2 d-flex align-items-center">
                                     {% include 'rating.html' %}
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6 p-2">
+                                <div class="col-md-6 p-2 pb-4">
                                     <span class="ingredient-name"> Keuken &nbsp&nbsp </span> {{record.kitchen}}
                                 </div>
-                                <div class="col-md-6 p-2">
+                                <div class="col-md-6 p-2 pb-4">
                                     <span class="ingredient-name"> Type &nbsp&nbsp</span> {{record.type}}
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12 p-2">
+                                <div class="col-md-12 p-2 pb-4">
                                     {{record.short_description}}<br><br>
                                     {{record.long_description}}
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6 p-4">
-                                    <a class="oplijst-button" type="submit" style="color: white; font-family: 'pretty_lilyregular'; font-size: 40px; text-align: center;"> Op lijst </a>
+                            <div class="row d-flex">
+                                <div class="col-md-6 p-4 align-items-end">
+                                    <a class="oplijst-button" type="submit" style="color: white; font-family: 'pretty_lilyregular'; font-size: 40px; text-align: center; text-decoration: none"> Op lijst </a>
                                     {#  href="index.php?recipe_id={{record.id}}&action=detail" #}
                                 </div>
-                                <div class="col-md-6 p-4 d-flex justify-content-end">
-                                    <span class="fa fa-heart fa-2x notfavorite"></span>
-                                    <span class="fa fa-heart fa-2x favorite "></span>
+                                <div class="col-md-6 p-4 d-flex align-items-end justify-content-end">
+                                    {% set favs = false %}
+                                    {% for fav in record.favorites %}
+                                        {% if fav.user_id == user_id %}
+                                            {% set favs = true %}
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    {% if favs == true %}
+                                        <a class= "fa fa-heart fa-3x favorite" style="text-decoration: none"> </a>
+                                    {% else %}
+                                        <a class= "fa fa-heart fa-3x notfavorite" style="text-decoration: none"> </a>
+                                    {% endif %}
+
+
                                 </div>
                             </div>
                         </div>
