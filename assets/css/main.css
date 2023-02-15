@@ -223,12 +223,24 @@ color: white;
 }
 
 .notfavorite {
-    color: lightgrey;
-    border-color: var(--lighter-red);
+    color: grey !important; 
+    font-size: 60px;
+   
 }
 .favorite {
-    color: var(--lighter-red);
-    border-color: var(--lighter-red);
+    color: red !important;
+    font-size: 60px;
+}
+
+.grey {
+    color: lightgrey;
+    font-size:60px;
+
+}
+.red {
+    color: red;
+    font-size:60px;
+
 }
 
 .oplijst-button {
@@ -309,3 +321,4 @@ color: white;
     color: var(--darker-green);
     font-size:40px;
 }
+

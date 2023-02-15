@@ -1,4 +1,7 @@
+
+
 {% extends "main.html.twig" %}
+
 
 {% block content %}
 
@@ -51,14 +54,7 @@
                                             {% set favs = true %}
                                         {% endif %}
                                     {% endfor %}
-
-                                    {% if favs == true %}
-                                        <a class= "fa fa-heart fa-3x favorite" style="text-decoration: none"> </a>
-                                    {% else %}
-                                        <a class= "fa fa-heart fa-3x notfavorite" style="text-decoration: none"> </a>
-                                    {% endif %}
-
-
+                                        <i id="heart" class="fa fa-heart {% if favs == false %}not{% endif %}favorite"> </i>
                                 </div>
                             </div>
                         </div>

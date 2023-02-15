@@ -19,7 +19,8 @@
     <script src="node_modules/vegas/dist/vegas.js"></script>
 
     <script>
-      $(document).ready( function() {
+    $(document).ready( function() {
+
         $("#vegas-image").vegas({      
             overlay: 'node_modules/vegas/dist/overlays/02.png',     
             slides: [
@@ -28,7 +29,25 @@
                 {% endfor %}
             ]
         })
-      })
+
+        $("#heart").click(function(){
+            let url="index.php?recipe_id=2&action=addfav&user_id={{ user_id }}"
+            if ($("#heart").hasClass("favorite")){
+                url="index.php?recipe_id=2&action=deletefav&user_id={{user_id}}"
+                }
+
+            $.ajax({
+                url: url,
+                method: "GET",
+                success: function(result){
+                    $("#heart").removeClass("favorite")
+                    $("#heart").removeClass("notfavorite")
+                    $("#heart").addClass(result.status ? "favorite" : "notfavorite")
+                }
+            })    
+        })        
+    })
+
     </script>
 </head>
 

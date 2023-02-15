@@ -42,8 +42,10 @@ $recipeinfoData = $recipeinfo->selectInfo(2, 'F');
 $recipeData = $recipe->selectRecipe(0);
 $groceriesData = $groceries->AddGroceries(4,1);
 
-$addFavorite = $recipeinfo->addFavorite(2,1);
-$deleteFavorite = $recipeinfo->deleteFavorite(2,1);
+
+
+
+
 
 /*
 URL:
@@ -53,7 +55,7 @@ http://localhost/index.php?recipe_id=4&action=detail
 $recipe_id = isset($_GET["recipe_id"]) ? $_GET["recipe_id"] : "";
 $user_id = isset($_GET["user_id"]) ? $_GET["user_id"] : "";
 
-$action = isset($_GET["action"]) ? $_GET["action"] : "groceries";
+$action = isset($_GET["action"]) ? $_GET["action"] : "homepage";
 
 
 switch($action) {
@@ -78,26 +80,27 @@ switch($action) {
         $title = "Boodschappen";
         break;
     }
-}
 
-switch($favorite) {
-
-    case "addFavorite": {
-        $recipeinfo->addFavorite(2, 1);
+    case "addfav": {
+        $recipeinfo -> addFavorite($recipe_id, $user_id);
+        header("Content-Type: application/json");
         $result = ["status" => true];
         $JSON = json_encode($result);
+        echo($JSON);
+        exit;
         break;
     }
 
-    case "deleteFavorite": {
-        $recipeinfo->deleteFavorite(2, 1);
+    case "deletefav": {
+        $recipeinfo->deleteFavorite($recipe_id, $user_id);
+        header("Content-Type: application/json");
         $result = ["status" => false];
         $JSON = json_encode($result);
+        echo($JSON);
+        exit;
         break;
     }
-
 }
-
 
 
 
@@ -108,3 +111,5 @@ $template = $twig->load($template);
 
 /// En tonen die handel!
 echo $template->render(["title" => $title, "data" => $data, "user_id" => 1]);
+
+?>
