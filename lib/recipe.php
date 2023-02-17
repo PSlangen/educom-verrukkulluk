@@ -32,6 +32,7 @@ class recipe {
             $calories = $this -> calcCalories($ingredients);
             $price = $this -> calcPrice($ingredients);
             $rating = $this -> fetchRating($recipe["id"]);
+            $avgRating = $this -> fetchAvgRating($recipe["id"]);
             $preparation = $this -> fetchPreparation($recipe["id"]);
             $comments = $this -> fetchComments($recipe["id"]);
             $favorites = $this -> determineFavorite($recipe["id"]);
@@ -46,12 +47,13 @@ class recipe {
                 "calories" => $calories,
                 "price" => $price,
                 "rating" => $rating,
+                "avgRating"=>$avgRating,
                 "preparation" => $preparation,
                 "comments" => $comments,
                 "favorites" => $favorites,
                 "short_description"=>$recipe["short_description"],
                 "long_description"=>$recipe["long_description"],
-                "image"=>$recipe["image"]
+                "image"=>$recipe["image"],
             ];
         }
 
@@ -72,6 +74,13 @@ class recipe {
 
     private function fetchRating($recipe_id){
         return ($this->recipeinfo->selectInfo($recipe_id, 'R'));
+    }
+
+    public function fetchAvgRating($recipe_id){
+        $sql = "SELECT ROUND(AVG(Numerical)) AS AvgRating FROM recipeinfo where recipe_id = $recipe_id and record_type = 'R'";
+        $result = mysqli_query($this->connection, $sql);
+        $return = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        return ($return);
     }
 
     private function fetchPreparation($recipe_id){

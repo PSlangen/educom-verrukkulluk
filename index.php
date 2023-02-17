@@ -42,7 +42,6 @@ $recipeinfoData = $recipeinfo->selectInfo(2, 'F');
 $recipeData = $recipe->selectRecipe(0);
 $groceriesData = $groceries->AddGroceries(4,1);
 
-$ratingData = $recipeinfo->fetchAvgRating(2);
 
 // echo "<pre>";
 // var_dump($ratingData);
@@ -58,6 +57,9 @@ http://localhost/index.php?recipe_id=4&action=detail
 
 $recipe_id = isset($_GET["recipe_id"]) ? $_GET["recipe_id"] : "";
 $user_id = isset($_GET["user_id"]) ? $_GET["user_id"] : "";
+$rating = isset($_GET["rating"]) ? $_GET["rating"] : "";
+
+
 
 $action = isset($_GET["action"]) ? $_GET["action"] : "homepage";
 
@@ -106,6 +108,7 @@ switch($action) {
     }
 
     case "addrating": {
+        $recipeinfo->addRating($recipe_id, $rating);
         exit;
         break;
     }
