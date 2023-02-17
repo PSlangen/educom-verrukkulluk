@@ -238,10 +238,20 @@ color: white;
 
 }
 .red {
-    color: red;
-    font-size:60px;
-
+    color: red !important; 
 }
+
+.star {
+    font-size: 60px;
+    color: #000;
+    cursor: pointer;
+    width: 50px;
+}
+
+.star:hover {
+    color: #F00;
+}
+
 
 .oplijst-button {
     background-color: var(--lighter-red);

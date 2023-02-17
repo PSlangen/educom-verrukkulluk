@@ -44,4 +44,20 @@ class recipeinfo {
         $result = mysqli_query($this->connection, $sql); 
         return ($result);
     }
+
+    public function fetchAvgRating($recipe_id){
+        $sql = "SELECT ROUND(AVG(Numerical)) AS AvgRating FROM recipeinfo where recipe_id = $recipe_id and record_type = 'R'";
+        $result = mysqli_query($this->connection, $sql);
+        $return = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        return ($return);
+    }
+
+    public function addRating($recipe_id){
+        $ratingValue = $_POST['value'];
+        $sql = "INSERT INTO recipeinfo (recipe_id, numerical, record_type)
+        VALUES ($recipe_id, 2, 'R')"; 
+        $result = mysqli_query($this->connection, $sql);
+        return ($result);
+    }
+
 }

@@ -42,7 +42,11 @@ $recipeinfoData = $recipeinfo->selectInfo(2, 'F');
 $recipeData = $recipe->selectRecipe(0);
 $groceriesData = $groceries->AddGroceries(4,1);
 
+$ratingData = $recipeinfo->fetchAvgRating(2);
 
+// echo "<pre>";
+// var_dump($ratingData);
+// echo "<br>";
 
 
 
@@ -100,6 +104,12 @@ switch($action) {
         exit;
         break;
     }
+
+    case "addrating": {
+        exit;
+        break;
+    }
+
 }
 
 

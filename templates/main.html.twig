@@ -45,7 +45,32 @@
                     $("#heart").addClass(result.status ? "favorite" : "notfavorite")
                 }
             })    
-        })        
+        })  
+
+        $(".star").click( function() {
+            const value = $(this).attr('data-value')
+            const ratingValue = { rating: value }
+
+    
+            $.ajax({
+                url: "http://localhost/educom-verrukkulluk/index.php?recipe_id=2&action=addrating",
+                method: "POST",
+                data: ratingValue,
+                success: function(result) {
+                    alert(JSON.stringify(ratingValue))
+                    $(".star").removeClass('red')
+                    $('.star').each( (index, elem) => {
+                        const itemValue = $(elem).attr('data-value')
+                        if(itemValue <= value) {
+                        $(elem).addClass('red')
+                        }
+                        
+                    })
+                }
+            })
+        })
+
+
     })
 
     </script>
