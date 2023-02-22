@@ -80,13 +80,6 @@ switch($action) {
         break;
     }
 
-    case "groceries": {
-        $data = $recipe->selectRecipe($recipe_id);
-        $template = 'groceries.html.twig';
-        $title = "Boodschappen";
-        break;
-    }
-
     case "addfav": {
         $recipeinfo -> addFavorite($recipe_id, $user_id);
         header("Content-Type: application/json");
@@ -107,9 +100,17 @@ switch($action) {
         break;
     }
 
-    case "addrating": {
+    case "rate": {
         $recipeinfo->addRating($recipe_id, $rating);
+        echo $recipe->selectRecipe($recipe_id)[0]["avgRating"];
         exit;
+        break;
+    }
+
+    case "groceries": {
+        $data = $recipe->selectRecipe($recipe_id);
+        $template = 'groceries.html.twig';
+        $title = "Boodschappen";
         break;
     }
 

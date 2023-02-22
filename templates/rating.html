@@ -1,7 +1,3 @@
-<div>
-    <span class="star">*</span>
-    <span class="star">*</span>
-    <span class="star">*</span>
-    <span class="star">*</span>
-    <span class="star">*</span>
-</div>
+{% for i in range(1,5) %}
+<span class="star {% if record.avgRating >= i %} orange {% endif %}" data-value={{i}} data-recipe={{ record.id }}>*</span>
+{% endfor %}

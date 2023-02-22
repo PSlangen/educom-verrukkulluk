@@ -31,7 +31,7 @@
         })
 
         $("#heart").click(function(){
-            let url="index.php?recipe_id=2&action=addfav&user_id={{ user_id }}"
+            let url="index.php?recipe_id=2&action=addfav&user_id={{user_id}}"
             if ($("#heart").hasClass("favorite")){
                 url="index.php?recipe_id=2&action=deletefav&user_id={{user_id}}"
                 }
@@ -47,22 +47,32 @@
             })    
         })  
 
-        $(".star").click( function() {
-            const value = $(this).attr('data-value')
+        $(".star").click(function() {
+            const rating = $(this).attr("data-value")
+            const recipe_id = $(this).attr("data-recipe")
 
             $.ajax({
-                url: "http://localhost/educom-verrukkulluk/index.php?recipe_id=2&action=addrating",
+                url: "./index.php",
                 method: "GET",
-                data: { rating: value },
+                data: { 
+                    action: "rate",
+                    recipe_id: recipe_id,
+                    rating: rating},
                 success: function(result) {
-                    alert(value)
+                    $(".star").each( (index, elem) => {
+                        const itemValue = $(elem).attr("data-value")
+                        $(elem).removeClass("orange")
+                        if (result >= itemValue){
+                            $(elem).addClass("orange")
+                        } 
+                    })
                 }
             })
+
+
         })
 
-
     })
-
     </script>
 </head>
 

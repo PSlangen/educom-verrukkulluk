@@ -25,21 +25,7 @@
                                     <span class="recipe-title">{{ record.title }}</span>
                                 </div>
                                 <div class="col-md-4 p-2 d-flex align-items-center">
-                                    <script>
-                                    $(document).ready( function() {
-                                        $('.star').each((index, elem) => {
-                                            const starValue = $(elem).attr('data-value')
-                                            if(starValue <= {{ record.avgRating.AvgRating }}) {
-                                                $(elem).addClass('red')
-                                            }
-                                        })
-                                    })
-                                    </script>
-                                    <span class="star" data-value="1">*</span>
-                                    <span class="star" data-value="2">*</span>
-                                    <span class="star" data-value="3">*</span>
-                                    <span class="star" data-value="4">*</span>
-                                    <span class="star" data-value="5">*</span>
+                                    {% include 'rating.html' %}
                                 </div>
                             </div>
                             <div class="row">
@@ -54,9 +40,6 @@
                                 <div class="col-md-12 p-2 pb-4">
                                     {{record.short_description}}<br><br>
                                     {{record.long_description}}
-                                    <pre>
-                                    {{ dump(record)}}
-                                    </pre>
                                 </div>
                             </div>
                             <div class="row d-flex">

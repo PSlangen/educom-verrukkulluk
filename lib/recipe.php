@@ -47,7 +47,7 @@ class recipe {
                 "calories" => $calories,
                 "price" => $price,
                 "rating" => $rating,
-                "avgRating"=>$avgRating,
+                "avgRating"=>$avgRating["AvgRating"],
                 "preparation" => $preparation,
                 "comments" => $comments,
                 "favorites" => $favorites,
