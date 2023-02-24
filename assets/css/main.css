@@ -332,3 +332,16 @@ color: white;
     font-size:40px;
 }
 
+
+/* Groceries */
+.grocery-title{
+    color: var(--darker-green);
+    font-family: 'pretty_lilyregular';
+    font-size: 70px; 
+}
+
+.totaal{
+    color: var(--darker-red);
+    font-family: 'pretty_lilyregular';
+    font-size: 60px; 
+}

@@ -37,12 +37,19 @@ class groceries {
         return(false);
     }
 
-    private function fetchGroceries ($user_id){
+    public function fetchGroceries ($user_id){
         $sql = "select * from groceries where user_id = $user_id";
         $result = mysqli_query($this->connection, $sql); 
         $return = [];
+
         while ($groceries = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-            $return [] = $groceries;
+            $article = $this -> fetchArticle($groceries["article_id"]);
+            $return [] = [
+                "article_id" => $groceries["article_id"],
+                "user_id" => $groceries["user_id"],
+                "number" => $groceries["number"],
+                "article" => $article,
+            ];
         }
     
         return($return);
@@ -51,6 +58,11 @@ class groceries {
     private function fetchIngredients($recipe_id){
         return ($this->ingredient->selectIngredient($recipe_id));
     }
+
+    private function fetchArticle($article_id){
+        return ($this->article->selectArticle($article_id));
+    }
+    
 
     private function addArticle ($ingredient, $user_id){
         $article_id = $ingredient["article_id"];
@@ -82,4 +94,5 @@ class groceries {
         return($groceryNumber);
         
     }
+
 }

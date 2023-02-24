@@ -34,13 +34,6 @@ $recipe = new recipe ($db->getConnection(), $user, $kitchentype, $ingredient, $r
 $groceries = new groceries ($db->getConnection(), $user, $ingredient, $article);
 
 
-$articleData = $article->selectArticle(1);
-$userData = $user->selectUser(1);
-$kitchentypeData = $kitchentype->selectKitchentype(1);
-$ingredientData = $ingredient->selectIngredient(2);
-$recipeinfoData = $recipeinfo->selectInfo(2, 'F');
-$recipeData = $recipe->selectRecipe(0);
-$groceriesData = $groceries->AddGroceries(4,1);
 
 
 // echo "<pre>";
@@ -108,11 +101,19 @@ switch($action) {
     }
 
     case "groceries": {
-        $data = $recipe->selectRecipe($recipe_id);
+        $data = $groceries->fetchGroceries (1);
         $template = 'groceries.html.twig';
         $title = "Boodschappen";
         break;
     }
+
+    case "addgroceries": {
+        $data = $groceries->addGroceries ($recipe_id, 1);
+        exit;
+        break;
+    }
+
+
 
 }
 
