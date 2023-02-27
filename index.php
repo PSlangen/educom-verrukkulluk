@@ -49,9 +49,10 @@ http://localhost/index.php?recipe_id=4&action=detail
 */
 
 $recipe_id = isset($_GET["recipe_id"]) ? $_GET["recipe_id"] : "";
-$user_id = isset($_GET["user_id"]) ? $_GET["user_id"] : "";
+$user_id = isset($_GET["user_id"]) ? $_GET["user_id"] : "1";
 $rating = isset($_GET["rating"]) ? $_GET["rating"] : "";
-
+$article_id = isset($_GET["article_id"]) ? $_GET["article_id"] : "";
+$number = isset($_GET["number"]) ? $_GET["number"] : "";
 
 
 $action = isset($_GET["action"]) ? $_GET["action"] : "homepage";
@@ -101,22 +102,38 @@ switch($action) {
     }
 
     case "groceries": {
-        $data = $groceries->fetchGroceries (1);
+        $data = $groceries->fetchGroceries ($user_id);
         $template = 'groceries.html.twig';
         $title = "Boodschappen";
         break;
     }
 
     case "addgroceries": {
-        $data = $groceries->addGroceries ($recipe_id, 1);
+        $data = $groceries->addGroceries ($recipe_id, $user_id);
         exit;
         break;
     }
 
+    case "delgrocery": {
+        $data = $groceries->deleteGrocery ($article_id, $user_id);
+        break;
+    }
 
+    case "delgroceries": {
+        $data = $groceries->deleteGroceries ($user_id);
+        exit;
+        break;
+    }
+
+    case "updategrocery": {
+        $groceries-> updateGrocery ($article_id, $user_id, $number);
+        $data = $groceries->fetchGroceries ($user_id);
+        $template = 'groceries.html.twig';
+        $title = "Boodschappen";
+        break;
+    }
 
 }
-
 
 
 /// Onderstaande code schrijf je idealiter in een layout klasse of iets dergelijks

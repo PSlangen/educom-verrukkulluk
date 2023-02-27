@@ -92,7 +92,25 @@ class groceries {
         }
 
         return($groceryNumber);
-        
     }
+
+    public function deleteGrocery($article_id, $user_id){      
+        $sql = "DELETE FROM groceries WHERE article_id=$article_id AND user_id=$user_id";
+        $result = mysqli_query($this->connection, $sql); 
+        return ($result);
+    }
+
+    public function deleteGroceries($user_id){      
+        $sql = "DELETE FROM groceries WHERE user_id=$user_id";
+        $result = mysqli_query($this->connection, $sql); 
+        return ($result);
+    }
+
+    public function updateGrocery($article_id, $user_id, $number){      
+        $sql = "UPDATE groceries SET number=$number WHERE article_id=$article_id AND user_id=$user_id";
+        $result = mysqli_query($this->connection, $sql); 
+        return ($result);
+    }
+
 
 }

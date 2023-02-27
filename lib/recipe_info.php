@@ -32,7 +32,6 @@ class recipeinfo {
     }
 
     public function addFavorite ($recipe_id, $user_id){         //Add user_id and 'F' to ["record_type"] in DB.
-
         $sql = "INSERT INTO recipeinfo (recipe_id, user_id, record_type)
         VALUES ($recipe_id, $user_id, 'F')"; 
         $result = mysqli_query($this->connection, $sql); 

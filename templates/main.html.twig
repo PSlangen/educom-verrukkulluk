@@ -21,6 +21,7 @@
     <script>
     $(document).ready( function() {
 
+
         $("#vegas-image").vegas({      
             overlay: 'node_modules/vegas/dist/overlays/02.png',     
             slides: [
@@ -29,6 +30,7 @@
                 {% endfor %}
             ]
         })
+
 
         $("#heart").click(function(){
             let url="index.php?recipe_id=2&action=addfav&user_id={{user_id}}"
@@ -68,11 +70,37 @@
                     })
                 }
             })
+        })
+        
+        $("#trash").click(function() {
+            const article_id = $(this).attr("data-article")
 
+            $.ajax({
+                url: "./index.php",
+                method: "GET",
+                data: { 
+                    action: "delgrocery",
+                    article_id: article_id},
+                success: function(result) {
+                    location.reload();
+                }
+            })
+        })
 
+        $("#trashall").click(function() {
+            $.ajax({
+                url: "./index.php",
+                method: "GET",
+                data: { 
+                    action: "delgroceries"},
+                success: function(result) {
+                    location.reload();
+                }
+            })
         })
 
     })
+
     </script>
 </head>
 
