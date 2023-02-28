@@ -109,8 +109,10 @@ switch($action) {
     }
 
     case "addgroceries": {
-        $data = $groceries->addGroceries ($recipe_id, $user_id);
-        exit;
+        $groceries->addGroceries ($recipe_id, $user_id);
+        $data = $groceries->fetchGroceries ($user_id);
+        $template = 'groceries.html.twig';
+        $title = "Boodschappen";
         break;
     }
 

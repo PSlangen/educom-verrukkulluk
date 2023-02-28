@@ -23,10 +23,15 @@
 
 
         $("#vegas-image").vegas({      
+            timer: false,
             overlay: 'node_modules/vegas/dist/overlays/02.png',     
             slides: [
                 {% for record in data %}
-                { src: "{{record.image}}" },
+                    {% if record.image == true %}
+                        { src: "{{record.image}}" },
+                    {% else %}
+                        { src: "assets/img/carbonara_wide.webp" },
+                    {% endif %}
                 {% endfor %}
             ]
         })
@@ -112,6 +117,12 @@
             <div style="padding-bottom:30px">
                 <div id="vegas-image"></div>
                 <a href="index.php"><img class="header-logo"  src="assets/img/logo-v2.png"></a> 
+                <div class="input-group rounded header-search">
+                    <input type="search" class="form-control rounded" placeholder="Zoeken" aria-label="Search" aria-describedby="search-addon"/>
+                    <span class="input-group-text border-0" id="search-addon" >
+                     <i class="fas fa-search" style="color:var(--darker-red)"></i>
+                    </span>
+                </div>
             </div>
 		</div>
 	</div>

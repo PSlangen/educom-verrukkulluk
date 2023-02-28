@@ -104,8 +104,15 @@ html, body {
     width: 30%;
     height: auto;
     top: 40px;
-    left: 60px;
-    
+    left: 60px;   
+}
+
+.header-search{
+    position: absolute;
+    width: 20%;
+    height: auto;
+    top: 60px;
+    right: 100px;   
 }
 
 /* footer */
