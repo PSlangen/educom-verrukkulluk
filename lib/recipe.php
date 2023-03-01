@@ -111,6 +111,22 @@ class recipe {
         return($totalPrice);
     }
 
+    public function searchRecipes($keyword){
+        $recipes = $this -> selectRecipe ();
+        $result = [];
+
+        foreach ($recipes as $recipe){
+            $txt = json_encode($recipe);
+            $hit = strpos($txt, $keyword);
+
+            if ($hit !== false){
+                $result [] = $recipe;
+            }
+        }
+
+        return($result);
+    }
+
 
 
 

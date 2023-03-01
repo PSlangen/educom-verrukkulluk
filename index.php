@@ -53,7 +53,7 @@ $user_id = isset($_GET["user_id"]) ? $_GET["user_id"] : "1";
 $rating = isset($_GET["rating"]) ? $_GET["rating"] : "";
 $article_id = isset($_GET["article_id"]) ? $_GET["article_id"] : "";
 $number = isset($_GET["number"]) ? $_GET["number"] : "";
-
+$keyword = isset($_GET["keyword"]) ? $_GET["keyword"] : "";
 
 $action = isset($_GET["action"]) ? $_GET["action"] : "homepage";
 
@@ -134,6 +134,14 @@ switch($action) {
         $title = "Boodschappen";
         break;
     }
+
+    case "search": {
+        $data = $recipe->searchRecipes ($keyword);
+        $template = 'homepage.html.twig';
+        $title = "Resultaten";
+        break;
+    }
+
 
 }
 
